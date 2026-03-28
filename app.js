@@ -440,8 +440,8 @@ const DATA = {
 
 // Teal folder — notes theme
 function folderSVG(empty = false) {
-  const body = empty ? '#3d3d3d' : '#0d9488';
-  const tab = empty ? '#555' : '#14b8a6';
+  const body = empty ? 'var(--text-muted)' : 'var(--accent-folder)';
+  const tab = empty ? 'var(--text-secondary)' : 'var(--accent-folder-tab)';
   return `<svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 9C0 7.9 0.9 7 2 7H14L17 11H34C35.1 11 36 11.9 36 13V29C36 30.1 35.1 31 34 31H2C0.9 31 0 30.1 0 29V9Z" fill="${body}"/>
     <rect x="0" y="7" width="17" height="5" rx="1" fill="${tab}"/>
@@ -455,10 +455,10 @@ function folderSVG(empty = false) {
 // PDF file icon — red
 function pdfSVG() {
   return `<svg viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="0" width="32" height="36" rx="3" fill="#e53935"/>
-    <path d="M20 0L32 12V36H20V0Z" fill="#b71c1c"/>
-    <polygon points="20,0 32,12 20,12" fill="#ef9a9a"/>
-    <text x="4" y="24" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="white">PDF</text>
+    <rect x="0" y="0" width="32" height="36" rx="3" fill="var(--accent-red)"/>
+    <path d="M20 0L32 12V36H20V0Z" fill="var(--accent-red-dim)"/>
+    <polygon points="20,0 32,12 20,12" fill="rgba(255,255,255,0.4)"/>
+    <text x="4" y="24" font-family="Manrope,sans-serif" font-size="7" font-weight="800" fill="white">PDF</text>
   </svg>`;
 }
 
@@ -563,7 +563,7 @@ function renderFileList() {
   if (!node || !node.children || node.children.length === 0) {
     list.innerHTML = `
       <div class="empty-state">
-        <div class="empty-icon">📂</div>
+        <div class="empty-icon">&#128194;</div>
         <p>No notes here yet.</p>
         <p style="margin-top:0.5rem;font-size:0.8rem;">Be the first to contribute!</p>
       </div>`;
@@ -581,7 +581,7 @@ function renderFileList() {
           <div class="file-info">
             <div class="file-name">${escapeHtml(child.name)}</div>
           </div>
-          <span class="file-arrow">›</span>
+          <span class="file-arrow">&rsaquo;</span>
         </div>`;
     } else {
       return `
@@ -593,7 +593,7 @@ function renderFileList() {
             <div class="file-name">${escapeHtml(child.name)}</div>
             ${child.meta ? `<div class="file-meta">${escapeHtml(child.meta)}</div>` : ''}
           </div>
-          <span class="file-arrow" style="color:var(--accent-red);font-size:1rem;">↓</span>
+          <span class="file-arrow file-arrow-download">&darr;</span>
         </div>`;
     }
   }).join('');
@@ -772,21 +772,48 @@ function submitUpload() {
    THEME TOGGLE
    */
 
+function syncThemeIcon(theme) {
+  const icon = document.getElementById('theme-icon');
+  if (!icon) return;
+  icon.textContent = theme === 'dark' ? '\u263D' : '\u2600';
+}
+
 function toggleTheme() {
   const html = document.documentElement;
-  const icon = document.getElementById('theme-icon');
   const isDark = html.getAttribute('data-theme') === 'dark';
-  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  icon.textContent = isDark ? '☀' : '☽';
-  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  const nextTheme = isDark ? 'light' : 'dark';
+  html.setAttribute('data-theme', nextTheme);
+  syncThemeIcon(nextTheme);
+  localStorage.setItem('theme', nextTheme);
 }
 
 function initTheme() {
+  const html = document.documentElement;
   const saved = localStorage.getItem('theme');
-  if (saved === 'light') {
-    document.documentElement.setAttribute('data-theme', saved);
-    document.getElementById('theme-icon').textContent = '☀';
+  const theme = saved || html.getAttribute('data-theme') || 'light';
+  html.setAttribute('data-theme', theme);
+  syncThemeIcon(theme);
+}
+
+function renderFooterLastUpdated() {
+  const target = document.getElementById('footer-last-updated');
+  if (!target) return;
+
+  const lastModified = document.lastModified ? new Date(document.lastModified) : new Date();
+  if (Number.isNaN(lastModified.getTime())) {
+    target.textContent = 'recently';
+    return;
   }
+
+  const formatted = new Intl.DateTimeFormat(undefined, {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit'
+  }).format(lastModified);
+
+  target.textContent = formatted;
 }
 
 /* 
@@ -803,7 +830,7 @@ function showToast(msg, duration = 3000) {
     position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);
     background:var(--modal-bg);color:var(--text-primary);border:1px solid var(--border);
     padding:0.7rem 1.5rem;border-radius:6px;font-size:0.85rem;
-    font-family:'Inter',sans-serif;z-index:9999;
+    font-family:'Manrope',sans-serif;z-index:9999;
     box-shadow:0 4px 20px rgba(0,0,0,0.3);
     animation:fadeInUp 0.2s ease;white-space:nowrap;
     max-width:90vw;text-align:center;`;
@@ -847,5 +874,6 @@ document.addEventListener('keydown', (e) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  renderFooterLastUpdated();
   render();
 });
