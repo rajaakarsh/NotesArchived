@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,9 +28,7 @@
       <a href="#archive-panel" class="nav-link nav-link-primary" onclick="document.getElementById('archive-panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;">Browse</a>
       <a href="#" class="nav-link" id="nav-contribute" onclick="openContribute(); return false;">Contribute</a>
       <a href="#" class="nav-link" id="nav-about" onclick="openAbout(); return false;">About</a>
-      <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span class="theme-icon" id="theme-icon">&#9728;</span>
-      </button>
+
     </nav>
   </header>
 
@@ -48,7 +46,23 @@
           </div>
         </div>
         <div class="hero-card">
-          <p class="hero-card-label">Designed for fast scanning</p>
+          <p class="hero-card-label">Archive at a glance</p>
+          <div class="hero-stats" id="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-num" id="stat-notes">—</span>
+              <span class="hero-stat-label">Notes linked</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num" id="stat-subjects">—</span>
+              <span class="hero-stat-label">Subjects covered</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num" id="stat-branches">—</span>
+              <span class="hero-stat-label">Branches</span>
+            </div>
+          </div>
           <div class="hero-points">
             <span class="hero-pill">Minimal</span>
             <span class="hero-pill">Mobile friendly</span>
@@ -58,20 +72,46 @@
         </div>
       </section>
 
+      <!-- LATEST UPLOADS -->
+      <section class="latest-section" id="latest-section" style="display:none;">
+        <div class="latest-section-header">
+          <div>
+            <p class="panel-kicker">Recently Added</p>
+            <h2 class="panel-title latest-panel-title">Latest Uploads</h2>
+          </div>
+          <span class="new-badge new-badge-pulse">NEW</span>
+        </div>
+        <div class="latest-grid" id="latest-grid"></div>
+      </section>
+
       <section class="explorer-container" id="archive-panel">
         <div class="explorer-panel">
           <div class="explorer-header">
-            <div>
-              <p class="panel-kicker">Archive</p>
-              <h2 class="panel-title">Browse Notes</h2>
+            <div class="explorer-header-top">
+              <div>
+                <p class="panel-kicker">Archive</p>
+                <h2 class="panel-title">Browse Notes</h2>
+              </div>
+              <p class="panel-copy">Open folders to drill into branch, semester, and subject. PDFs open in the built-in viewer.</p>
             </div>
-            <p class="panel-copy">Open folders to drill into branch, semester, and subject. PDFs open in the built-in viewer.</p>
+            <div class="search-wrapper">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="search" class="search-input" id="search-input"
+                placeholder="Search notes, subjects, PYQs…"
+                oninput="handleSearch(this.value)"
+                autocomplete="off" />
+              <kbd class="search-kbd" id="search-kbd">Ctrl K</kbd>
+              <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search" style="display:none;">&#10005;</button>
+            </div>
           </div>
 
           <!-- BREADCRUMB -->
           <div class="breadcrumb-bar">
-            <button class="up-btn" id="up-btn" onclick="navigateUp()" aria-label="Go up">&#8593;</button>
+            <button class="up-btn" id="up-btn" onclick="navigateUp()" title="Go up (Backspace)" aria-label="Go up">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+            </button>
             <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb"></nav>
+            <span class="breadcrumb-depth" id="breadcrumb-depth" style="display:none;"></span>
           </div>
 
           <!-- FILE LIST -->
@@ -171,8 +211,13 @@
     <div class="modal" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('contribute')" aria-label="Close">&#10005;</button>
       <h2 class="modal-title">Contribute Notes</h2>
-      <p class="modal-text">Help your fellow students by uploading notes you've made or collected. Navigate into a subject folder and click "Upload Notes".</p>
-      <a href="https://github.com" target="_blank" rel="noopener" class="modal-btn">Open GitHub Repo</a>
+      <p class="modal-text">Help your fellow students! Navigate into a subject folder, click <strong>"Upload Notes"</strong>, and follow the steps to submit your PDF via GitHub.</p>
+      <div class="contribute-steps">
+        <div class="contribute-step"><span class="step-num">1</span><span>Fork the <a href="https://github.com/imaakarsh/NotesArchived" target="_blank" rel="noopener" class="modal-link">GitHub repo</a></span></div>
+        <div class="contribute-step"><span class="step-num">2</span><span>Add your PDF to the correct folder</span></div>
+        <div class="contribute-step"><span class="step-num">3</span><span>Open a Pull Request — done!</span></div>
+      </div>
+      <a href="https://github.com/imaakarsh/NotesArchived" target="_blank" rel="noopener" class="modal-btn">Open GitHub Repo ↗</a>
     </div>
   </div>
 
@@ -193,17 +238,19 @@
       <!-- Header -->
       <div class="upl-header">
         <div>
-          <h2 class="upl-title">Upload Notes PDF</h2>
-          <p class="upl-subtitle">Contribute to <span id="upl-subject-name">this subject</span></p>
+          <h2 class="upl-title" id="upl-modal-title">Upload Notes PDF</h2>
+          <p class="upl-subtitle" id="upl-modal-subtitle">Contribute to <span id="upl-subject-name">this subject</span></p>
         </div>
         <button class="modal-close upl-close-btn" onclick="closeModal('upload')" aria-label="Close">&#10005;</button>
       </div>
 
-      <!-- Target path pill -->
-      <div class="upl-path-row">
-        <span class="upl-path-label">Target path</span>
-        <code class="upl-path-value" id="upl-path-value">/notes/btech/...</code>
-      </div>
+      <!-- VIEW 1: FORM -->
+      <div id="upl-form-view">
+        <!-- Target path pill -->
+        <div class="upl-path-row">
+          <span class="upl-path-label">Target path</span>
+          <code class="upl-path-value" id="upl-path-value">/notes/btech/...</code>
+        </div>
 
       <!-- Drag & Drop File Zone -->
       <div class="upl-dropzone" id="upl-dropzone" onclick="document.getElementById('note-file').click()"
@@ -268,10 +315,31 @@
 
       </div>
 
-      <!-- Actions -->
-      <div class="upl-actions">
-        <button class="upl-upload-btn" id="upl-submit-btn" onclick="submitUpload()">Upload Notes</button>
-        <button class="upl-clear-btn" onclick="clearUploadForm()">Clear</button>
+        <!-- Actions -->
+        <div class="upl-actions">
+          <button class="upl-upload-btn" id="upl-submit-btn" onclick="submitUpload()">Prepare Upload</button>
+          <button class="upl-clear-btn" onclick="clearUploadForm()">Clear</button>
+        </div>
+      </div>
+
+      <!-- VIEW 2: SUCCESS / GITHUB GUIDE -->
+      <div id="upl-success-view" style="display:none; text-align:center; padding: 1rem 0;">
+        <div style="font-size:3rem; margin-bottom:1rem;">🎉</div>
+        <h3 style="font-family:'Sora',sans-serif; font-size:1.3rem; margin-bottom:0.5rem;">File Prepared!</h3>
+        <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.6; margin-bottom:1.5rem;">
+          Since Notes Archive uses no backend, you need to upload your PDF directly to our GitHub repository.
+        </p>
+        
+        <div style="background:var(--surface-hover); border:1px solid var(--border); border-radius:1rem; padding:1.2rem; text-align:left; margin-bottom:1.5rem;">
+          <p style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--text-muted); margin-bottom:0.4rem; text-transform:uppercase; letter-spacing:0.05em;">Your auto-generated filename</p>
+          <code id="success-filename" style="display:block; font-size:0.95rem; color:var(--accent); word-break:break-all; margin-bottom:1rem;">file.pdf</code>
+          
+          <p style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--text-muted); margin-bottom:0.4rem; text-transform:uppercase; letter-spacing:0.05em;">Upload to this folder</p>
+          <code id="success-path" style="display:block; font-size:0.95rem; color:var(--text-primary); word-break:break-all;">/notes/btech/...</code>
+        </div>
+
+        <a href="https://github.com/imaakarsh/NotesArchived" target="_blank" rel="noopener" class="hero-btn hero-btn-primary" style="display:inline-block; width:100%; box-sizing:border-box; margin-bottom:0.8rem;">Open GitHub Repo ↗</a>
+        <button class="hero-btn hero-btn-secondary" style="width:100%;" onclick="closeModal('upload')">Done</button>
       </div>
 
     </div>

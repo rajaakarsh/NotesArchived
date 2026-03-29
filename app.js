@@ -15,7 +15,7 @@ const DATA = {
             {
               type: 'folder', name: 'Mathematics I',
               children: [
-                { type: 'file', name: 'Unit 1 — Differential Calculus', meta: 'PDF', url: 'https://drive.google.com/file/d/1pRMTfdHPpG5WEw9qD5QQycmTKC-snf8y/view?usp=sharing' },
+                { type: 'file', name: 'Unit 1 — Differential Calculus', meta: 'PDF', url: 'https://drive.google.com/file/d/1pRMTfdHPpG5WEw9qD5QQycmTKC-snf8y/view?usp=sharing', isNew: true },
                 { type: 'file', name: 'Unit 2 — Integral Calculus', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 3 — Matrices & Determinants', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 4 — Differential Equations', meta: 'PDF', url: '#' },
@@ -467,6 +467,75 @@ function pdfSVG() {
    */
 
 let currentPath = [];
+let searchQuery  = '';
+
+/* 
+   SEARCH & FLAT FILE INDEX
+   */
+
+// Recursively collect all files with path metadata
+function getAllFiles(node = DATA, pathNames = [], parentPathIdx = [], results = []) {
+  if (!node || !node.children) return results;
+  node.children.forEach((child, i) => {
+    if (child.type === 'file') {
+      results.push({
+        file: child,
+        fileIdx: i,
+        parentPath: [...parentPathIdx],
+        pathNames: [...pathNames],
+      });
+    } else if (child.type === 'folder') {
+      getAllFiles(child, [...pathNames, child.name], [...parentPathIdx, i], results);
+    }
+  });
+  return results;
+}
+
+// Get files marked isNew, up to n items
+function getLatestFiles(n = 6) {
+  return getAllFiles().filter(r => r.file.isNew).slice(0, n);
+}
+
+// Render the Latest Uploads section
+function renderLatestUploads() {
+  const section = document.getElementById('latest-section');
+  const grid    = document.getElementById('latest-grid');
+  if (!section || !grid) return;
+  const files = getLatestFiles(6);
+  if (!files.length) { section.style.display = 'none'; return; }
+  section.style.display = '';
+  grid.innerHTML = files.map(({ file, parentPath, pathNames }) => {
+    const path = [...pathNames].join(' › ');
+    const hasUrl = file.url && file.url !== '#';
+    return `
+      <div class="latest-card"
+           role="button" tabindex="0"
+           onclick="${hasUrl ? `openPdfModal(${JSON.stringify(file.url)}, ${JSON.stringify(file.name)})` : `navigateTo(${JSON.stringify(parentPath)})`}"
+           onkeydown="if(event.key==='Enter') this.click()">
+        <div class="latest-card-path">${escapeHtml(path || 'btech')}</div>
+        <div class="latest-card-name">${escapeHtml(file.name)}</div>
+        <div class="latest-card-footer">
+          <span class="new-badge">NEW</span>
+          <span class="latest-card-meta">${escapeHtml(file.meta || 'PDF')}</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// Handle search input
+function handleSearch(value) {
+  searchQuery = value.trim().toLowerCase();
+  const clearBtn = document.getElementById('search-clear');
+  if (clearBtn) clearBtn.style.display = searchQuery ? 'flex' : 'none';
+  renderFileList();
+}
+
+// Clear search
+function clearSearch() {
+  const input = document.getElementById('search-input');
+  if (input) input.value = '';
+  handleSearch('');
+}
 
 /* 
    NAVIGATION
@@ -521,11 +590,57 @@ function render() {
   renderBreadcrumb();
   renderFileList();
   renderUploadSection();
+  renderLatestUploads();
+}
+
+/* ── Hero Stats ─────────────────────────────────────────── */
+function computeStats() {
+  const allFiles = getAllFiles();
+  const linkedNotes = allFiles.filter(r => r.file.url && r.file.url !== '#').length;
+
+  // Count unique subject-level folders (depth 3 in tree: branch > sem > subject)
+  let subjectCount = 0;
+  if (DATA.children) {
+    DATA.children.forEach(branch => {
+      if (!branch.children) return;
+      branch.children.forEach(sem => {
+        if (!sem.children) return;
+        sem.children.forEach(subject => {
+          if (subject.type === 'folder') subjectCount++;
+        });
+      });
+    });
+  }
+
+  const branchCount = DATA.children ? DATA.children.length : 0;
+  return { linkedNotes, subjectCount, branchCount };
+}
+
+function animateCount(el, target, suffix = '') {
+  if (!el) return;
+  const duration = 700;
+  const start = performance.now();
+  const step = (now) => {
+    const t = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - t, 3); // ease-out cubic
+    el.textContent = Math.round(ease * target) + suffix;
+    if (t < 1) requestAnimationFrame(step);
+    else { el.textContent = target + suffix; el.classList.add('counted'); }
+  };
+  requestAnimationFrame(step);
+}
+
+function renderHeroStats() {
+  const { linkedNotes, subjectCount, branchCount } = computeStats();
+  animateCount(document.getElementById('stat-notes'),    linkedNotes,   '');
+  animateCount(document.getElementById('stat-subjects'), subjectCount,  '+');
+  animateCount(document.getElementById('stat-branches'), branchCount,   '');
 }
 
 function renderBreadcrumb() {
-  const bc = document.getElementById('breadcrumb');
-  const upBtn = document.getElementById('up-btn');
+  const bc     = document.getElementById('breadcrumb');
+  const upBtn  = document.getElementById('up-btn');
+  const depth  = document.getElementById('breadcrumb-depth');
 
   const segments = [
     { label: 'notes', path: null },
@@ -541,11 +656,10 @@ function renderBreadcrumb() {
   bc.innerHTML = segments.map((seg, i) => {
     const isLast = i === segments.length - 1;
     const sep = i < segments.length - 1 ? '<span class="breadcrumb-sep"> / </span>' : '';
-
     if (isLast) {
       return `<span class="breadcrumb-segment active">${seg.label}</span>${sep}`;
     } else if (seg.path === null) {
-      return `<span class="breadcrumb-segment clickable" onclick="navigateTo([])">${seg.label}</span>${sep}`;
+      return `<span class="breadcrumb-segment clickable" onclick="navigateTo([])">${ seg.label}</span>${sep}`;
     } else {
       return `<span class="breadcrumb-segment clickable" onclick="breadcrumbNavigateTo(${JSON.stringify(seg.path)})">${seg.label}</span>${sep}`;
     }
@@ -553,19 +667,75 @@ function renderBreadcrumb() {
 
   upBtn.disabled = currentPath.length === 0;
   upBtn.style.opacity = currentPath.length === 0 ? '0.35' : '1';
-  upBtn.style.cursor = currentPath.length === 0 ? 'not-allowed' : 'pointer';
+  upBtn.style.cursor  = currentPath.length === 0 ? 'not-allowed' : 'pointer';
+
+  // Depth indicator: show "Level X" when inside a folder
+  if (depth) {
+    const level = currentPath.length; // 0 = root, 1 = branch, 2 = sem, 3 = subject
+    const labels = ['', 'Branch', 'Semester', 'Subject', 'Files'];
+    if (level > 0) {
+      depth.textContent = labels[level] || `Level ${level}`;
+      depth.style.display = '';
+    } else {
+      depth.style.display = 'none';
+    }
+  }
 }
 
 function renderFileList() {
   const list = document.getElementById('file-list');
+
+  /* ── SEARCH MODE ─────────────────────────────────────────── */
+  if (searchQuery) {
+    const all     = getAllFiles();
+    const results = all.filter(({ file }) =>
+      file.name.toLowerCase().includes(searchQuery) ||
+      file.pathNames && file.pathNames.some(p => p.toLowerCase().includes(searchQuery))
+    );
+
+    if (!results.length) {
+      list.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">🔍</div>
+          <p>No notes found for "<strong>${escapeHtml(searchQuery)}</strong>"</p>
+          <p style="margin-top:0.5rem;font-size:0.82rem;">Try a shorter keyword or browse by branch above</p>
+        </div>`;
+      return;
+    }
+
+    list.innerHTML = results.map(({ file, parentPath, pathNames, fileIdx }) => {
+      const hasUrl = file.url && file.url !== '#';
+      return `
+        <div class="file-item"
+             onclick="${hasUrl ? `openPdfModal(${JSON.stringify(file.url)}, ${JSON.stringify(file.name)})` : `navigateTo(${JSON.stringify(parentPath)})`}"
+             role="button" tabindex="0"
+             onkeydown="if(event.key==='Enter'||event.key===' ') this.click()">
+          <div class="icon-pdf">${pdfSVG()}</div>
+          <div class="file-info">
+            <div class="file-name">
+              ${escapeHtml(file.name)}
+              ${file.isNew ? '<span class="new-badge">NEW</span>' : ''}
+            </div>
+            <div class="search-result-path">${pathNames.join(' › ')}</div>
+          </div>
+          ${hasUrl
+            ? `<a class="file-dl-btn" href="${file.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Open in new tab">↗</a>`
+            : `<span class="file-arrow file-arrow-download">&darr;</span>`
+          }
+        </div>`;
+    }).join('');
+    return;
+  }
+
+  /* ── NORMAL BROWSE MODE ──────────────────────────────────── */
   const node = getNodeAtPath(currentPath);
 
   if (!node || !node.children || node.children.length === 0) {
     list.innerHTML = `
       <div class="empty-state">
-        <div class="empty-icon">&#128194;</div>
-        <p>No notes here yet.</p>
-        <p style="margin-top:0.5rem;font-size:0.8rem;">Be the first to contribute!</p>
+        <div class="empty-icon">🚀</div>
+        <p style="font-weight:700;">No notes here yet.</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;">Be the first to contribute! 🚀</p>
       </div>`;
     return;
   }
@@ -573,27 +743,44 @@ function renderFileList() {
   list.innerHTML = node.children.map((child, idx) => {
     if (child.type === 'folder') {
       const empty = !child.children || child.children.length === 0;
+      const childFileCount   = (child.children || []).filter(c => c.type === 'file').length;
+      const childFolderCount = (child.children || []).filter(c => c.type === 'folder').length;
+      const countLabel = childFileCount > 0
+        ? `${childFileCount} file${childFileCount !== 1 ? 's' : ''}`
+        : childFolderCount > 0
+          ? `${childFolderCount} folder${childFolderCount !== 1 ? 's' : ''}`
+          : null;
       return `
         <div class="file-item" id="item-${idx}"
              onclick="navigateToIndex(${idx})" role="button" tabindex="0"
              onkeydown="if(event.key==='Enter'||event.key===' ') navigateToIndex(${idx})">
           <div class="icon-folder">${folderSVG(empty)}</div>
           <div class="file-info">
-            <div class="file-name">${escapeHtml(child.name)}</div>
+            <div class="file-name">
+              ${escapeHtml(child.name)}
+              ${countLabel ? `<span class="folder-count">${countLabel}</span>` : ''}
+            </div>
           </div>
           <span class="file-arrow">&rsaquo;</span>
         </div>`;
     } else {
+      const hasUrl = child.url && child.url !== '#';
       return `
         <div class="file-item" id="item-${idx}"
              onclick="navigateToIndex(${idx})" role="button" tabindex="0"
              onkeydown="if(event.key==='Enter'||event.key===' ') navigateToIndex(${idx})">
           <div class="icon-pdf">${pdfSVG()}</div>
           <div class="file-info">
-            <div class="file-name">${escapeHtml(child.name)}</div>
+            <div class="file-name">
+              ${escapeHtml(child.name)}
+              ${child.isNew ? '<span class="new-badge">NEW</span>' : ''}
+            </div>
             ${child.meta ? `<div class="file-meta">${escapeHtml(child.meta)}</div>` : ''}
           </div>
-          <span class="file-arrow file-arrow-download">&darr;</span>
+          ${hasUrl
+            ? `<a class="file-dl-btn" href="${child.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Open in new tab">↗</a>`
+            : `<span class="file-arrow file-arrow-download">&darr;</span>`
+          }
         </div>`;
     }
   }).join('');
@@ -642,9 +829,10 @@ function openUpload() {
   const pathStr = '/notes/btech/' + parts.map(p => p.toLowerCase()).join('/') + '/';
   const subjectName = parts.length > 0 ? parts[parts.length - 1] : 'this subject';
 
+  clearUploadForm();
+
   document.getElementById('upl-path-value').textContent   = pathStr;
   document.getElementById('upl-subject-name').textContent = subjectName;
-  clearUploadForm();
 
   document.getElementById('upload-modal-overlay').classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -721,6 +909,25 @@ function clearUploadForm() {
   if (dz) dz.classList.remove('has-file');
   const firstRadio = document.querySelector('input[name="note-type"]');
   if (firstRadio) firstRadio.checked = true;
+
+  // Reset Views
+  const formView = document.getElementById('upl-form-view');
+  const successView = document.getElementById('upl-success-view');
+  if (formView) formView.style.display = '';
+  if (successView) successView.style.display = 'none';
+
+  const titleEl = document.getElementById('upl-modal-title');
+  const subEl = document.getElementById('upl-modal-subtitle');
+  if (titleEl) titleEl.style.display = '';
+  if (subEl) subEl.style.display = '';
+
+  const btn = document.getElementById('upl-submit-btn');
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = 'Prepare Upload';
+    btn.style.background = '';
+  }
+
   updateFilename();
 }
 
@@ -756,44 +963,23 @@ function submitUpload() {
 
   const btn = document.getElementById('upl-submit-btn');
   btn.disabled    = true;
-  btn.textContent = 'Submitted ✓';
-  btn.style.background = '#16a34a';
+  btn.textContent = 'Preparing...';
 
   setTimeout(() => {
-    closeModal('upload');
-    showToast('Thank you! Your notes will be reviewed and added. 🎉', 4000);
-    btn.disabled    = false;
-    btn.textContent = 'Upload Notes';
-    btn.style.background = '';
-  }, 1200);
+    const filename = document.getElementById('upl-filename-box').textContent;
+    const path = document.getElementById('upl-path-value').textContent;
+
+    document.getElementById('success-filename').textContent = filename;
+    document.getElementById('success-path').textContent = path;
+
+    document.getElementById('upl-form-view').style.display = 'none';
+    document.getElementById('upl-modal-title').style.display = 'none';
+    document.getElementById('upl-modal-subtitle').style.display = 'none';
+    document.getElementById('upl-success-view').style.display = 'block';
+
+  }, 600);
 }
 
-/* 
-   THEME TOGGLE
-   */
-
-function syncThemeIcon(theme) {
-  const icon = document.getElementById('theme-icon');
-  if (!icon) return;
-  icon.textContent = theme === 'dark' ? '\u263D' : '\u2600';
-}
-
-function toggleTheme() {
-  const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
-  const nextTheme = isDark ? 'light' : 'dark';
-  html.setAttribute('data-theme', nextTheme);
-  syncThemeIcon(nextTheme);
-  localStorage.setItem('theme', nextTheme);
-}
-
-function initTheme() {
-  const html = document.documentElement;
-  const saved = localStorage.getItem('theme');
-  const theme = saved || html.getAttribute('data-theme') || 'light';
-  html.setAttribute('data-theme', theme);
-  syncThemeIcon(theme);
-}
 
 function renderFooterLastUpdated() {
   const target = document.getElementById('footer-last-updated');
@@ -859,13 +1045,31 @@ function escapeHtml(str) {
    */
 
 document.addEventListener('keydown', (e) => {
+  const active = document.activeElement.tagName;
+  const inInput = ['INPUT', 'TEXTAREA', 'SELECT'].includes(active);
+
   if (e.key === 'Escape') {
+    // Close any open modal
     document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
     closePdfModal();
     document.body.style.overflow = '';
+    // Also clear search
+    if (searchQuery) clearSearch();
   }
-  if (e.key === 'Backspace' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName))
-    navigateUp();
+
+  // Ctrl+K or '/' to focus search
+  if ((e.ctrlKey && e.key === 'k') || (e.key === '/' && !inInput)) {
+    e.preventDefault();
+    const input = document.getElementById('search-input');
+    if (input) {
+      input.focus();
+      input.select();
+      document.querySelector('.explorer-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // Backspace to go up (when not in an input)
+  if (e.key === 'Backspace' && !inInput && !searchQuery) navigateUp();
 });
 
 /* 
@@ -873,7 +1077,10 @@ document.addEventListener('keydown', (e) => {
    */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
+  localStorage.removeItem('theme'); // dark-only, no theme switching
+  renderHeroStats();
+  renderLatestUploads();
   renderFooterLastUpdated();
   render();
 });
+
