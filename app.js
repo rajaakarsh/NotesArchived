@@ -440,9 +440,9 @@ const DATA = {
             {
               type: 'folder', name: 'Electronics Engineering',
               children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 2: Basics of Semiconductor Devices: P-N junction diode and BJT', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3: AC to DC Conversion and Introduction of Operational amplifier:', meta: 'PDF', url: '#' },
               ]
             },
             {
