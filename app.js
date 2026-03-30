@@ -10,7 +10,7 @@ const DATA = {
       name: 'CSE',
       children: [
         {
-          type: 'folder', name: 'Sem 1',
+          type: 'folder', name: '1st Year',
           children: [
             {
               type: 'folder', name: 'Mathematics I',
@@ -22,7 +22,47 @@ const DATA = {
               ]
             },
             {
+              type: 'folder', name: 'Chemistry',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
               type: 'folder', name: 'Physics',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Electrical Engineering',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Electronics Engineering',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Maths 2',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'CS 2',
               children: [
                 { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
@@ -48,7 +88,7 @@ const DATA = {
           ]
         },
         {
-          type: 'folder', name: 'Sem 2',
+          type: 'folder', name: '2nd Year',
           children: [
             {
               type: 'folder', name: 'Mathematics II',
@@ -75,11 +115,6 @@ const DATA = {
                 { type: 'file', name: 'Unit 3 — Sequential Circuits', meta: 'PDF', url: '#' },
               ]
             },
-          ]
-        },
-        {
-          type: 'folder', name: 'Sem 3',
-          children: [
             {
               type: 'folder', name: 'Object Oriented Programming (Java)',
               children: [
@@ -115,11 +150,6 @@ const DATA = {
                 { type: 'file', name: 'Unit 3 — Graph Theory', meta: 'PDF', url: '#' },
               ]
             },
-          ]
-        },
-        {
-          type: 'folder', name: 'Sem 4',
-          children: [
             {
               type: 'folder', name: 'Career Skills',
               children: [
@@ -182,7 +212,7 @@ const DATA = {
           ]
         },
         {
-          type: 'folder', name: 'Sem 5',
+          type: 'folder', name: '3rd Year',
           children: [
             {
               type: 'folder', name: 'Computer Networks',
@@ -211,11 +241,6 @@ const DATA = {
                 { type: 'file', name: 'Unit 4 — Project Management', meta: 'PDF', url: '#' },
               ]
             },
-          ]
-        },
-        {
-          type: 'folder', name: 'Sem 6',
-          children: [
             {
               type: 'folder', name: 'Compiler Design',
               children: [
@@ -245,7 +270,7 @@ const DATA = {
           ]
         },
         {
-          type: 'folder', name: 'Sem 7',
+          type: 'folder', name: '4th Year',
           children: [
             {
               type: 'folder', name: 'Information Security',
@@ -263,11 +288,6 @@ const DATA = {
                 { type: 'file', name: 'Unit 3 — Expert Systems', meta: 'PDF', url: '#' },
               ]
             },
-          ]
-        },
-        {
-          type: 'folder', name: 'Sem 8',
-          children: [
             {
               type: 'folder', name: 'Cloud Computing',
               children: [
@@ -294,7 +314,7 @@ const DATA = {
       type: 'folder', name: 'CE',
       children: [
         {
-          type: 'folder', name: 'Sem 1',
+          type: 'folder', name: '1st Year',
           children: [
             {
               type: 'folder', name: 'Engineering Mechanics',
@@ -310,11 +330,6 @@ const DATA = {
                 { type: 'file', name: 'Unit 2 — Differential Equations', meta: 'PDF', url: '#' },
               ]
             },
-          ]
-        },
-        {
-          type: 'folder', name: 'Sem 2',
-          children: [
             {
               type: 'folder', name: 'Building Materials',
               children: [
@@ -331,12 +346,9 @@ const DATA = {
             },
           ]
         },
-        { type: 'folder', name: 'Sem 3', children: [] },
-        { type: 'folder', name: 'Sem 4', children: [] },
-        { type: 'folder', name: 'Sem 5', children: [] },
-        { type: 'folder', name: 'Sem 6', children: [] },
-        { type: 'folder', name: 'Sem 7', children: [] },
-        { type: 'folder', name: 'Sem 8', children: [] },
+        { type: 'folder', name: '2nd Year', children: [] },
+        { type: 'folder', name: '3rd Year', children: [] },
+        { type: 'folder', name: '4th Year', children: [] },
       ]
     },
 
@@ -345,7 +357,7 @@ const DATA = {
       type: 'folder', name: 'ECE',
       children: [
         {
-          type: 'folder', name: 'Sem 1',
+          type: 'folder', name: '1st Year',
           children: [
             {
               type: 'folder', name: 'Basic Electronics',
@@ -357,13 +369,9 @@ const DATA = {
             },
           ]
         },
-        { type: 'folder', name: 'Sem 2', children: [] },
-        { type: 'folder', name: 'Sem 3', children: [] },
-        { type: 'folder', name: 'Sem 4', children: [] },
-        { type: 'folder', name: 'Sem 5', children: [] },
-        { type: 'folder', name: 'Sem 6', children: [] },
-        { type: 'folder', name: 'Sem 7', children: [] },
-        { type: 'folder', name: 'Sem 8', children: [] },
+        { type: 'folder', name: '2nd Year', children: [] },
+        { type: 'folder', name: '3rd Year', children: [] },
+        { type: 'folder', name: '4th Year', children: [] },
       ]
     },
 
@@ -372,7 +380,7 @@ const DATA = {
       type: 'folder', name: 'ME',
       children: [
         {
-          type: 'folder', name: 'Sem 1',
+          type: 'folder', name: '1st Year',
           children: [
             {
               type: 'folder', name: 'Engineering Drawing',
@@ -383,13 +391,9 @@ const DATA = {
             },
           ]
         },
-        { type: 'folder', name: 'Sem 2', children: [] },
-        { type: 'folder', name: 'Sem 3', children: [] },
-        { type: 'folder', name: 'Sem 4', children: [] },
-        { type: 'folder', name: 'Sem 5', children: [] },
-        { type: 'folder', name: 'Sem 6', children: [] },
-        { type: 'folder', name: 'Sem 7', children: [] },
-        { type: 'folder', name: 'Sem 8', children: [] },
+        { type: 'folder', name: '2nd Year', children: [] },
+        { type: 'folder', name: '3rd Year', children: [] },
+        { type: 'folder', name: '4th Year', children: [] },
       ]
     },
 
@@ -398,34 +402,81 @@ const DATA = {
       type: 'folder', name: 'Year 1',
       children: [
         {
-          type: 'folder', name: 'Chemistry',
+          type: 'folder', name: '1st Year',
           children: [
-            { type: 'file', name: 'Unit 1 — Atomic Structure & Bonding', meta: 'PDF', url: '#' },
-            { type: 'file', name: 'Unit 2 — Thermodynamics & Kinetics', meta: 'PDF', url: '#' },
-            { type: 'file', name: 'Unit 3 — Organic Chemistry', meta: 'PDF', url: '#' },
-          ]
-        },
-        {
-          type: 'folder', name: 'English Communication',
-          children: [
-            { type: 'file', name: 'Unit 1 — Grammar & Writing Skills', meta: 'PDF', url: '#' },
-            { type: 'file', name: 'Unit 2 — Reading Comprehension', meta: 'PDF', url: '#' },
-          ]
-        },
-        {
-          type: 'folder', name: 'Mathematics I',
-          children: [
-            { type: 'file', name: 'Unit 1 — Sequences & Series', meta: 'PDF', url: '#' },
-            { type: 'file', name: 'Unit 2 — Differential Calculus', meta: 'PDF', url: '#' },
-            { type: 'file', name: 'Unit 3 — Integral Calculus', meta: 'PDF', url: '#' },
-            { type: 'file', name: 'Unit 4 — Matrices & Linear Algebra', meta: 'PDF', url: '#' },
-          ]
-        },
-        {
-          type: 'folder', name: 'Workshop Practice',
-          children: [
-            { type: 'file', name: 'Unit 1 — Fitting & Carpentry', meta: 'PDF', url: '#' },
-            { type: 'file', name: 'Unit 2 — Welding & Smithy', meta: 'PDF', url: '#' },
+            {
+              type: 'folder', name: 'Mathematics I',
+              children: [
+                { type: 'file', name: 'Unit 1 — Differential Calculus', meta: 'PDF', url: 'https://drive.google.com/file/d/1pRMTfdHPpG5WEw9qD5QQycmTKC-snf8y/view?usp=sharing', isNew: true },
+                { type: 'file', name: 'Unit 2 — Integral Calculus', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Matrices & Determinants', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 4 — Differential Equations', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Chemistry',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Physics',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Electrical Engineering',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Electronics Engineering',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Maths 2',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'CS 2',
+              children: [
+                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Programming Fundamentals (C)',
+              children: [
+                { type: 'file', name: 'Unit 1 — Introduction to C', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Control Flow & Functions', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Arrays & Pointers', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 4 — Structures & File I/O', meta: 'PDF', url: '#' },
+              ]
+            },
+            {
+              type: 'folder', name: 'English Communication',
+              children: [
+                { type: 'file', name: 'Unit 1 — Grammar & Writing', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Technical Communication', meta: 'PDF', url: '#' },
+              ]
+            },
           ]
         },
       ]
@@ -491,36 +542,7 @@ function getAllFiles(node = DATA, pathNames = [], parentPathIdx = [], results = 
   return results;
 }
 
-// Get files marked isNew, up to n items
-function getLatestFiles(n = 6) {
-  return getAllFiles().filter(r => r.file.isNew).slice(0, n);
-}
 
-// Render the Latest Uploads section
-function renderLatestUploads() {
-  const section = document.getElementById('latest-section');
-  const grid    = document.getElementById('latest-grid');
-  if (!section || !grid) return;
-  const files = getLatestFiles(6);
-  if (!files.length) { section.style.display = 'none'; return; }
-  section.style.display = '';
-  grid.innerHTML = files.map(({ file, parentPath, pathNames }) => {
-    const path = [...pathNames].join(' › ');
-    const hasUrl = file.url && file.url !== '#';
-    return `
-      <div class="latest-card"
-           role="button" tabindex="0"
-           onclick="${hasUrl ? `openPdfModal(${JSON.stringify(file.url)}, ${JSON.stringify(file.name)})` : `navigateTo(${JSON.stringify(parentPath)})`}"
-           onkeydown="if(event.key==='Enter') this.click()">
-        <div class="latest-card-path">${escapeHtml(path || 'btech')}</div>
-        <div class="latest-card-name">${escapeHtml(file.name)}</div>
-        <div class="latest-card-footer">
-          <span class="new-badge">NEW</span>
-          <span class="latest-card-meta">${escapeHtml(file.meta || 'PDF')}</span>
-        </div>
-      </div>`;
-  }).join('');
-}
 
 // Handle search input
 function handleSearch(value) {
@@ -590,7 +612,6 @@ function render() {
   renderBreadcrumb();
   renderFileList();
   renderUploadSection();
-  renderLatestUploads();
 }
 
 /* ── Hero Stats ─────────────────────────────────────────── */
@@ -1079,7 +1100,6 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   localStorage.removeItem('theme'); // dark-only, no theme switching
   renderHeroStats();
-  renderLatestUploads();
   renderFooterLastUpdated();
   render();
 });
