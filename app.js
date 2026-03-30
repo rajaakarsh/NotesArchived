@@ -362,9 +362,9 @@ const DATA = {
             {
               type: 'folder', name: 'Basic Electronics',
               children: [
-                { type: 'file', name: 'Unit 1 — Diodes & Transistors', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Amplifiers & Oscillators', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Operational Amplifiers', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 2: Basics of Semiconductor Devices: P-N junction diode and BJT', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3: AC to DC Conversion and Introduction of Operational amplifier:', meta: 'PDF', url: '#' },
               ]
             },
           ]
