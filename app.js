@@ -614,7 +614,7 @@ function render() {
   renderUploadSection();
 }
 
-/* ── Hero Stats ─────────────────────────────────────────── */
+/* ── Hero Stats ─ */
 function computeStats() {
   const allFiles = getAllFiles();
   const linkedNotes = allFiles.filter(r => r.file.url && r.file.url !== '#').length;
@@ -706,7 +706,7 @@ function renderBreadcrumb() {
 function renderFileList() {
   const list = document.getElementById('file-list');
 
-  /* ── SEARCH MODE ─────────────────────────────────────────── */
+  /* ── SEARCH MODE */
   if (searchQuery) {
     const all     = getAllFiles();
     const results = all.filter(({ file }) =>
@@ -748,7 +748,7 @@ function renderFileList() {
     return;
   }
 
-  /* ── NORMAL BROWSE MODE ──────────────────────────────────── */
+  /* ── NORMAL BROWSE MODE  */
   const node = getNodeAtPath(currentPath);
 
   if (!node || !node.children || node.children.length === 0) {
