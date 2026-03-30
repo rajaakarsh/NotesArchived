@@ -21,7 +21,7 @@
 
 **NotesArchived** is a streamlined, data-driven web application designed to organize and distribute academic notes for B.Tech students. Built with a focus on speed and user experience, it provides a hierarchical, folder-based interface to navigate through various engineering branches—including CSE and Electronics Engineering—semesters, and subjects.
 
-The project eliminates the clutter of traditional file-sharing methods by providing a centralized, searchable hub where students can access Unit-wise PDF notes, previous year questions, and reference materials directly via integrated cloud storage links like Google Drive. Recent updates include descriptive unit titles and direct access links for Electronics Engineering modules.
+The project eliminates the clutter of traditional file-sharing methods by providing a centralized, searchable hub where students can access Unit-wise PDF notes, previous year questions, and reference materials directly via integrated cloud storage links like Google Drive. Recent updates include descriptive unit titles for **Electronics Engineering** (covering Semiconductor Devices and AC to DC Conversion) and a direct access link for Unit 1.
 
 ### Target Audience
 - **Engineering Students**: Looking for organized, branch-specific study material.
@@ -121,9 +121,9 @@ Locate the appropriate `children` array and add a file object:
 
 ## 🖥 Usage
 
-1. **Browsing**: Click on folders (e.g., `CSE` -> `1st Year` -> `Electronics Engineering`) to navigate through the academic hierarchy and view specific unit topics like *Number Systems & Boolean Algebra*.
+1. **Browsing**: Click on folders (e.g., `CSE` -> `1st Year` -> `Electronics Engineering`) to navigate through the academic hierarchy and view specific unit topics like *Number Systems & Boolean Algebra* or *Basics of Semiconductor Devices*.
 2. **Searching**: Use the search bar at the top to find specific units or subjects instantly.
-3. **Downloading**: Click on any file entry (such as the newly linked Unit 1 notes) to open the document in a new tab via Google Drive.
+3. **Downloading**: Click on any file entry (such as the newly linked **Unit 1: Number Systems & Boolean Algebra** notes) to open the document in a new tab via Google Drive.
 4. **Breadcrumbs**: Use the "Back" button or the path indicators to navigate up the directory tree and switch between different engineering disciplines.
 
 ---
