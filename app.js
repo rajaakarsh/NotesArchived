@@ -852,12 +852,28 @@ function renderUploadSection() {
     const body = encodeURIComponent(
       `Subject: ${subjectName}\nFolder: ${pathStr}\nUnit: \nUnit Name: \n\nAttaching my notes PDF.`
     );
-    btn.href = `mailto:notesarchive1@gmail.com?subject=${subject}&body=${body}`;
+    btn.href = buildGmailUrl('notesarchive1@gmail.com', subject, body);
+    btn.target = '_blank';
+    btn.rel = 'noopener';
 
     section.style.display = 'block';
   } else {
     section.style.display = 'none';
   }
+}
+
+/* 
+   GMAIL COMPOSE HELPER
+   Opens Gmail compose directly — app deep-link on mobile, web compose on desktop.
+   */
+function buildGmailUrl(to, subject, body) {
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (isMobile) {
+    // Gmail app deep link — opens compose screen directly (Android + iOS)
+    return `googlegmail://co?to=${to}&subject=${subject}&body=${body}`;
+  }
+  // Desktop — Gmail web compose
+  return `https://mail.google.com/mail/?view=cm&to=${to}&su=${subject}&body=${body}`;
 }
 
 /* 
@@ -885,7 +901,8 @@ function openUpload() {
   const body = encodeURIComponent(
     `Subject: ${subjectName}\nFolder: ${pathStr}\n\nAttaching my notes PDF.`
   );
-  window.location.href = `mailto:notesarchive1@gmail.com?subject=${subject}&body=${body}`;
+  const gmailUrl = buildGmailUrl('notesarchive1@gmail.com', subject, body);
+  window.open(gmailUrl, '_blank', 'noopener');
 }
 
 function closeModal(type) {
