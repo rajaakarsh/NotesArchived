@@ -775,9 +775,9 @@ function renderFileList() {
   if (!node || !node.children || node.children.length === 0) {
     list.innerHTML = `
       <div class="empty-state">
-        <div class="empty-icon">🚀</div>
+        <div class="empty-icon"></div>
         <p style="font-weight:700;">No notes here yet.</p>
-        <p style="margin-top:0.5rem;font-size:0.82rem;">Be the first to contribute! 🚀</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;">Be the first to contribute!</p>
       </div>`;
     return;
   }
