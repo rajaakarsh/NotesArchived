@@ -15,12 +15,23 @@ const DATA = {
             {
               type: 'folder', name: 'Mathematics I',
               children: [
-                { type: 'file', name: 'Unit 1 — Differential Calculus', meta: 'PDF', url:"#", isNew: true },
+                { type: 'file', name: 'Unit 1 — Matrices & Determinants', meta: 'PDF', url:"#", isNew: true },
                 { type: 'file', name: 'Unit 2 — Integral Calculus', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Matrices & Determinants', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Calculaus 2nd', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 4 — Differential Equations', meta: 'PDF', url: '#' },
               ]
             },
+            {
+              type: 'folder', name: 'Mathsmatics 2nd',
+              children: [
+                { type: 'file', name: 'Unit 1: Ordinary Differential Equations', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2: Series Solution & Special Functions', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3: Sequences & Series', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 4: Complex Variable – I', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 5: Complex Variable – II', meta: 'PDF', url: '#' }
+              ]
+            },
+
             {
               type: 'folder', name: 'Chemistry',
               children: [
@@ -32,9 +43,11 @@ const DATA = {
             {
               type: 'folder', name: 'Physics',
               children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1: Molecular Structure & Spectroscopic Techniques', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2: Water Technology', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3: Polymers', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 4: Fuels & Renewable Energy', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 5: Electrochemistry & Applications', meta: 'PDF', url: '#' },
               ]
             },
             {
@@ -51,14 +64,6 @@ const DATA = {
               { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
                 { type: 'file', name: 'Unit 2: Basics of Semiconductor Devices: P-N junction diode and BJT', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 3: AC to DC Conversion and Introduction of Operational amplifier:', meta: 'PDF', url: '#' },
-              ]
-            },
-            {
-              type: 'folder', name: 'Maths 2',
-              children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
               ]
             },
             {
@@ -81,8 +86,11 @@ const DATA = {
             {
               type: 'folder', name: 'English Communication',
               children: [
-                { type: 'file', name: 'Unit 1 — Grammar & Writing', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Technical Communication', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1 — Functional Grammer', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Creative Writing Skill', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Reading Skill', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 4 — Presentation Skill', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 5 — Project Evaluation', meta: 'PDF', url: '#' },
               ]
             },
           ]
@@ -399,20 +407,34 @@ const DATA = {
 
     /* ── Year 1 (Common) ─────────────────── */
     {
-      type: 'folder', name: 'Year 1',
+      type: 'folder', name: '1st Year (Common)',
       children: [
         {
           type: 'folder', name: '1st Year',
           children: [
             {
+          type: 'folder', name: '1st Year',
+          children: [
+            {
               type: 'folder', name: 'Mathematics I',
               children: [
-                { type: 'file', name: 'Unit 1 — Differential Calculus', meta: 'PDF', url: 'https://drive.google.com/file/d/1pRMTfdHPpG5WEw9qD5QQycmTKC-snf8y/view?usp=sharing', isNew: true },
+                { type: 'file', name: 'Unit 1 — Matrices & Determinants', meta: 'PDF', url:"#", isNew: true },
                 { type: 'file', name: 'Unit 2 — Integral Calculus', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Matrices & Determinants', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Calculaus 2nd', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 4 — Differential Equations', meta: 'PDF', url: '#' },
               ]
             },
+            {
+              type: 'folder', name: 'Mathsmatics 2nd',
+              children: [
+                { type: 'file', name: 'Unit 1: Ordinary Differential Equations', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2: Series Solution & Special Functions', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3: Sequences & Series', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 4: Complex Variable – I', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 5: Complex Variable – II', meta: 'PDF', url: '#' }
+              ]
+            },
+
             {
               type: 'folder', name: 'Chemistry',
               children: [
@@ -424,9 +446,11 @@ const DATA = {
             {
               type: 'folder', name: 'Physics',
               children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1: Molecular Structure & Spectroscopic Techniques', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2: Water Technology', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3: Polymers', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 4: Fuels & Renewable Energy', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 5: Electrochemistry & Applications', meta: 'PDF', url: '#' },
               ]
             },
             {
@@ -440,17 +464,9 @@ const DATA = {
             {
               type: 'folder', name: 'Electronics Engineering',
               children: [
-                { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
+              { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
                 { type: 'file', name: 'Unit 2: Basics of Semiconductor Devices: P-N junction diode and BJT', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 3: AC to DC Conversion and Introduction of Operational amplifier:', meta: 'PDF', url: '#' },
-              ]
-            },
-            {
-              type: 'folder', name: 'Maths 2',
-              children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
               ]
             },
             {
@@ -473,10 +489,15 @@ const DATA = {
             {
               type: 'folder', name: 'English Communication',
               children: [
-                { type: 'file', name: 'Unit 1 — Grammar & Writing', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Technical Communication', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1 — Functional Grammer', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 2 — Creative Writing Skill', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 3 — Reading Skill', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 4 — Presentation Skill', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 5 — Project Evaluation', meta: 'PDF', url: '#' },
               ]
             },
+          ]
+        },
           ]
         },
       ]
