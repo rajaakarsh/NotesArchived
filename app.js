@@ -852,7 +852,7 @@ function renderUploadSection() {
     const body = encodeURIComponent(
       `Subject: ${subjectName}\nFolder: ${pathStr}\nUnit: \nUnit Name: \n\nAttaching my notes PDF.`
     );
-    btn.href = `https://mail.google.com/mail/?view=cm&to=notesarchive1@gmail.com&su=${subject}&body=${body}`;
+    btn.href = `mailto:notesarchive1@gmail.com?subject=${subject}&body=${body}`;
 
     section.style.display = 'block';
   } else {
@@ -885,8 +885,7 @@ function openUpload() {
   const body = encodeURIComponent(
     `Subject: ${subjectName}\nFolder: ${pathStr}\n\nAttaching my notes PDF.`
   );
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&to=notesarchive1@gmail.com&su=${subject}&body=${body}`;
-  window.open(gmailUrl, '_blank', 'noopener');
+  window.location.href = `mailto:notesarchive1@gmail.com?subject=${subject}&body=${body}`;
 }
 
 function closeModal(type) {
