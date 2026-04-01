@@ -1082,6 +1082,12 @@ function submitUpload() {
   }, 600);
 }
 
+function triggerSuccessGmail() {
+  const btn = document.getElementById('upl-gmail-btn');
+  const subject = (btn && btn.dataset.gmailSubject) || encodeURIComponent('Notes Contribution');
+  const body    = (btn && btn.dataset.gmailBody)    || encodeURIComponent('Attaching the PDF.');
+  openGmailCompose('notesarchive1@gmail.com', subject, body);
+}
 
 function renderFooterLastUpdated() {
   const target = document.getElementById('footer-last-updated');
