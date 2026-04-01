@@ -861,7 +861,7 @@ function openAbout() {
   document.getElementById('about-modal-overlay').classList.add('active');
 }
 function openUpload() {
-  // Populate path & subject name from current navigation state
+  // Build path from current navigation state
   let node = DATA;
   const parts = [];
   for (const idx of currentPath) {
@@ -871,13 +871,12 @@ function openUpload() {
   const pathStr = '/notes/btech/' + parts.map(p => p.toLowerCase()).join('/') + '/';
   const subjectName = parts.length > 0 ? parts[parts.length - 1] : 'this subject';
 
-  clearUploadForm();
-
-  document.getElementById('upl-path-value').textContent   = pathStr;
-  document.getElementById('upl-subject-name').textContent = subjectName;
-
-  document.getElementById('upload-modal-overlay').classList.add('active');
-  document.body.style.overflow = 'hidden';
+  const subject = encodeURIComponent('Notes Contribution – ' + subjectName);
+  const body = encodeURIComponent(
+    `Subject: ${subjectName}\nFolder: ${pathStr}\n\nAttaching my notes PDF.`
+  );
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&to=notesarchive1@gmail.com&su=${subject}&body=${body}`;
+  window.open(gmailUrl, '_blank', 'noopener');
 }
 
 function closeModal(type) {
@@ -1013,6 +1012,16 @@ function submitUpload() {
 
     document.getElementById('success-filename').textContent = filename;
     document.getElementById('success-path').textContent = path;
+
+    // Dynamically update Gmail button with actual filename & path
+    const gmailBtn = document.getElementById('upl-gmail-btn');
+    if (gmailBtn) {
+      const subject = encodeURIComponent('Notes Contribution');
+      const body = encodeURIComponent(
+        `Filename: ${filename}\nFolder: ${path}\n\nAttaching the PDF.`
+      );
+      gmailBtn.href = `https://mail.google.com/mail/?view=cm&to=notesarchive1@gmail.com&su=${subject}&body=${body}`;
+    }
 
     document.getElementById('upl-form-view').style.display = 'none';
     document.getElementById('upl-modal-title').style.display = 'none';
