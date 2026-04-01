@@ -616,7 +616,7 @@ function navigateToIndex(idx) {
     if (child.url && child.url !== '#') {
       openPdfModal(child.url, child.name);
     } else {
-      showToast('Note not linked yet - add the URL in app.js data!');
+      showToast('Note not linked yet ll Soon Uploaded');
     }
   }
 }
@@ -831,6 +831,7 @@ function renderFileList() {
 function renderUploadSection() {
   const section = document.getElementById('upload-section');
   const pathLabel = document.getElementById('upload-path-label');
+  const btn = document.getElementById('upload-btn');
   const node = getNodeAtPath(currentPath);
 
   // Show "Upload Notes" when inside a subject folder (its contents are files)
@@ -843,7 +844,16 @@ function renderUploadSection() {
       n = n.children[idx];
       parts.push(n.name);
     }
-    pathLabel.textContent = parts.slice(-1)[0].toLowerCase();
+    const subjectName = parts[parts.length - 1];
+    pathLabel.textContent = subjectName.toLowerCase();
+
+    const pathStr = '/notes/btech/' + parts.map(p => p.toLowerCase()).join('/') + '/';
+    const subject = encodeURIComponent('Notes Contribution – ' + subjectName);
+    const body = encodeURIComponent(
+      `Subject: ${subjectName}\nFolder: ${pathStr}\nUnit: \nUnit Name: \n\nAttaching my notes PDF.`
+    );
+    btn.href = `https://mail.google.com/mail/?view=cm&to=notesarchive1@gmail.com&su=${subject}&body=${body}`;
+
     section.style.display = 'block';
   } else {
     section.style.display = 'none';

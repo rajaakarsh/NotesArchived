@@ -1908,3 +1908,41 @@ svg {
     font-size: 1.1rem;
   }
 }
+
+/* ━━ UPLOAD SECTION & BUTTON ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.upload-section {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 1rem;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
+}
+
+.upload-btn:hover {
+  background: var(--accent);
+  color: #0a0f0d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(73, 197, 182, 0.25);
+}
+
+.upload-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
