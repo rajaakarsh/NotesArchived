@@ -38,9 +38,9 @@ The project eliminates the clutter of traditional file-sharing methods by provid
 - **🎨 Dynamic UI**: Custom-built SVG icons for folders and file types (PDFs) with theme-aware coloring.
 - **⚡ Zero Framework Overhead**: Built with Vanilla JavaScript for near-instant load times and maximum compatibility.
 - **📍 Breadcrumb Support**: Easy "up-one-level" navigation and path tracking.
+- **📧 Smart Mail Integration**: Robust Gmail compose flow featuring mobile deep-link fallback and optimized desktop tab handling for seamless feedback.
 
 ---
-
 ## 🛠 Tech Stack
 
 - **Frontend**: HTML5, CSS3 (Modern Flexbox/Grid, CSS Variables)
@@ -125,6 +125,7 @@ Locate the appropriate `children` array and add a file object:
 2. **Searching**: Use the search bar at the top to find specific units or subjects instantly across the expanded curriculum.
 3. **Downloading**: Click on any file entry (such as the linked **Unit 1: Number Systems & Boolean Algebra** notes) to open the document in a new tab via integrated cloud storage links.
 4. **Breadcrumbs**: Use the "Back" button or the path indicators to navigate up the directory tree and switch between different years, semesters, or engineering disciplines.
+5. **Feedback & Contact**: Use the integrated contact flow to send queries; the system intelligently handles transitions to the Gmail app on mobile devices or opens a dedicated compose tab on desktops.
 
 ---
 ## 🤝 Contributing
