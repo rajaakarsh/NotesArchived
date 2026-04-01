@@ -108,9 +108,9 @@
 
           <!-- UPLOAD BUTTON (shown at subject level) -->
           <div class="upload-section" id="upload-section" style="display:none;">
-            <a class="upload-btn" id="upload-btn" href="#" target="_blank" rel="noopener">
+            <button class="upload-btn" id="upload-btn" onclick="openUpload()">
               Upload Notes to "<span id="upload-path-label"></span>"
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -206,7 +206,7 @@
         <div class="contribute-step"><span class="step-num">2</span><span>Send it to us via email</span></div>
         <div class="contribute-step"><span class="step-num">3</span><span>Mention branch, semester &amp; subject — done!</span></div>
       </div>
-      <a href="https://mail.google.com/mail/?view=cm&to=notesarchive1@gmail.com&su=Notes%20Contribution&body=Branch%3A%20%0ASemester%3A%20%0ASubject%3A%20%0AUnit%3A%20%0AUnit%20Name%3A%20%0A%0AAttaching%20my%20notes%20PDF." target="_blank" rel="noopener" class="modal-btn" style="display:inline-flex; align-items:center; justify-content:center; gap:0.4rem;">Send Notes via Email <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      <button class="modal-btn" onclick="openGmailCompose('notesarchive1@gmail.com', encodeURIComponent('Notes Contribution'), encodeURIComponent('Branch: \nSemester: \nSubject: \nUnit: \nUnit Name: \n\nAttaching my notes PDF.'))" style="display:inline-flex; align-items:center; justify-content:center; gap:0.4rem; border:none; cursor:pointer;">Send Notes via Email <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></button>
     </div>
   </div>
 
@@ -346,7 +346,7 @@
           <code id="success-path" style="display:block; font-size:0.95rem; color:var(--text-primary); word-break:break-all;">/notes/btech/...</code>
         </div>
 
-        <a id="upl-gmail-btn" href="https://mail.google.com/mail/?view=cm&to=notesarchive1@gmail.com&su=Notes%20Contribution&body=Filename%3A%20file.pdf%0AFolder%3A%20%2Fnotes%2Fbtech%2F...%0A%0AAttaching%20the%20PDF." target="_blank" rel="noopener" class="hero-btn hero-btn-primary" style="display:inline-flex; align-items:center; justify-content:center; gap:0.4rem; width:100%; box-sizing:border-box; margin-bottom:0.8rem;">Send via Gmail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <button id="upl-gmail-btn" onclick="triggerSuccessGmail()" class="hero-btn hero-btn-primary" style="display:inline-flex; align-items:center; justify-content:center; gap:0.4rem; width:100%; box-sizing:border-box; margin-bottom:0.8rem; border:none; cursor:pointer;">Send via Gmail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></button>
         <button class="hero-btn hero-btn-secondary" style="width:100%;" onclick="closeModal('upload')">Done</button>
       </div>
 
