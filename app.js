@@ -852,9 +852,9 @@ function renderUploadSection() {
     const body = encodeURIComponent(
       `Subject: ${subjectName}\nFolder: ${pathStr}\nUnit: \nUnit Name: \n\nAttaching my notes PDF.`
     );
-    btn.href = buildGmailUrl('notesarchive1@gmail.com', subject, body);
-    btn.target = '_blank';
-    btn.rel = 'noopener';
+    // Store params on the button for use by openUpload()
+    btn.dataset.gmailSubject = subject;
+    btn.dataset.gmailBody = body;
 
     section.style.display = 'block';
   } else {
@@ -926,7 +926,6 @@ function openUpload() {
   const body = encodeURIComponent(
     `Subject: ${subjectName}\nFolder: ${pathStr}\n\nAttaching my notes PDF.`
   );
-  const gmailUrl = buildGmailUrl('notesarchive1@gmail.com', subject, body);
   openGmailCompose('notesarchive1@gmail.com', subject, body);
 }
 
@@ -1071,7 +1070,8 @@ function submitUpload() {
       const body = encodeURIComponent(
         `Filename: ${filename}\nFolder: ${path}\n\nAttaching the PDF.`
       );
-      gmailBtn.href = `https://mail.google.com/mail/?view=cm&to=notesarchive1@gmail.com&su=${subject}&body=${body}`;
+      gmailBtn.dataset.gmailSubject = subject;
+      gmailBtn.dataset.gmailBody = body;
     }
 
     document.getElementById('upl-form-view').style.display = 'none';
