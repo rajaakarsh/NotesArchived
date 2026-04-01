@@ -864,16 +864,41 @@ function renderUploadSection() {
 
 /* 
    GMAIL COMPOSE HELPER
-   Opens Gmail compose directly — app deep-link on mobile, web compose on desktop.
+   On mobile: tries Gmail app deep link, then falls back to mailto if not installed.
+   On desktop: opens Gmail web compose in a new tab.
    */
-function buildGmailUrl(to, subject, body) {
+function openGmailCompose(to, subject, body) {
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   if (isMobile) {
-    // Gmail app deep link — opens compose screen directly (Android + iOS)
-    return `googlegmail://co?to=${to}&subject=${subject}&body=${body}`;
+    // Try Gmail app deep link first
+    const gmailDeep = `googlegmail://co?to=${to}&subject=${subject}&body=${body}`;
+    const mailtoFallback = `mailto:${to}?subject=${subject}&body=${body}`;
+
+    // If Gmail app opens, the page goes to background so "blur" fires.
+    // If nothing happens within 1.5s, fall back to mailto (system mail chooser).
+    let didOpen = false;
+    const timer = setTimeout(() => {
+      if (!didOpen) window.location.href = mailtoFallback;
+    }, 1500);
+
+    window.addEventListener('blur', () => {
+      didOpen = true;
+      clearTimeout(timer);
+    }, { once: true });
+
+    window.location.href = gmailDeep;
+  } else {
+    // Desktop — open Gmail web compose in a new tab
+    const webUrl = `https://mail.google.com/mail/?view=cm&to=${to}&su=${subject}&body=${body}`;
+    window.open(webUrl, '_blank', 'noopener');
   }
-  // Desktop — Gmail web compose
-  return `https://mail.google.com/mail/?view=cm&to=${to}&su=${subject}&body=${body}`;
+}
+
+/* Backward-compat wrapper used by btn.href (anchor clicks on upload section) */
+function buildGmailUrl(to, subject, body) {
+  // For anchor hrefs we just return mailto; openGmailCompose handles JS-triggered flows
+  return `mailto:${to}?subject=${subject}&body=${body}`;
 }
 
 /* 
@@ -902,7 +927,7 @@ function openUpload() {
     `Subject: ${subjectName}\nFolder: ${pathStr}\n\nAttaching my notes PDF.`
   );
   const gmailUrl = buildGmailUrl('notesarchive1@gmail.com', subject, body);
-  window.open(gmailUrl, '_blank', 'noopener');
+  openGmailCompose('notesarchive1@gmail.com', subject, body);
 }
 
 function closeModal(type) {
