@@ -9,13 +9,106 @@ const DATA = {
       type: 'folder',
       name: 'CSE',
       children: [
+        /* ── Year 1 (Common) ─────────────────── */
+        {
+          type: 'folder', name: '1st Year (Common)',
+          children: [
+            {
+              type: 'folder', name: '1st Year',
+              children: [
+                {
+                  type: 'folder', name: 'Mathematics I',
+                  children: [
+                    { type: 'file', name: 'Unit 1 — Matrices & Determinants', meta: 'PDF', url: "#", isNew: true },
+                    { type: 'file', name: 'Unit 2 — Integral Calculus', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 3 — Calculaus 2nd', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 4 — Differential Equations', meta: 'PDF', url: '#' },
+                  ]
+                },
+                {
+                  type: 'folder', name: 'Mathsmatics 2nd',
+                  children: [
+                    { type: 'file', name: 'Unit 1: Ordinary Differential Equations', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 2: Series Solution & Special Functions', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 3: Sequences & Series', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 4: Complex Variable – I', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 5: Complex Variable – II', meta: 'PDF', url: '#' }
+                  ]
+                },
+                {
+                  type: 'folder', name: 'Chemistry',
+                  children: [
+                    { type: 'file', name: 'Unit 1 — MOLECULAR STUCTURE AND SPECTROSCOPIC TECHNIQUES', meta: 'PDF', url: 'https://drive.google.com/file/d/1mifbCbm3ivKc1NYxbSNbsHOt9axJpv3Q/view?usp=drive_link' },
+                    { type: 'file', name: 'Unit 2 — WATER TECHNOLOGY', meta: 'PDF', url: 'https://drive.google.com/file/d/1BSdW78md9gpfQ4XtZci6nVtkuEisz-K_/view?usp=drive_link' },
+                    { type: 'file', name: 'Unit 3 — POLYMERS', meta: 'PDF', url: 'https://drive.google.com/file/d/1BSdW78md9gpfQ4XtZci6nVtkuEisz-K_/view?usp=drive_link' },
+                    { type: 'file', name: 'Unit 4 — FUELS AND RENEWABLE ENERGY', meta: 'PDF', url: 'https://drive.google.com/file/d/1zWmhnvyv3fZV0cPVlX0ICGvsa6l7UXE-/view?usp=sharing' },
+                    { type: 'file', name: 'Unit 5 — ELECTROCHEMISTRY AND APPLICATIONS', meta: 'PDF', url: 'https://drive.google.com/file/d/1MpwbIy__OWAPs31X8VS5ECrnIDz0ymRM/view?usp=sharing' },
+                  ]
+                },
+                {
+                  type: 'folder', name: 'Physics',
+                  children: [
+                    { type: 'file', name: 'Unit 1: Interfrence And Diffraction', meta: 'PDF', url: 'https://drive.google.com/file/d/1C0hFLiPsXU6f23UlZ_Ig8_tepYC9z9FG/view?usp=sharing' },
+                    { type: 'file', name: 'Unit 2: Polarization', meta: 'PDF', url: 'https://drive.google.com/file/d/1w7numNH5lZif629JWlRblxyRQS9IzQO6/view?usp=sharing' },
+                    { type: 'file', name: 'Unit 3: Relativity', meta: 'PDF', url: 'https://drive.google.com/file/d/1LsJlarad5iE16kJCP8atioT8Co9Uqkf6/view?usp=sharing' },
+                    { type: 'file', name: 'Unit 4: Superconductivity', meta: 'PDF', url: 'https://drive.google.com/file/d/1LsJlarad5iE16kJCP8atioT8Co9Uqkf6/view?usp=sharing' },
+                    { type: 'file', name: 'Unit 5: Quantum Mechanics', meta: 'PDF', url: 'https://drive.google.com/file/d/1k66bgPDtFWt8B2ugHAuHnrIki4DMumsZ/view?usp=sharing' },
+                  ]
+                },
+                {
+                  type: 'folder', name: 'Electrical Engineering',
+                  children: [
+                    { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+                  ]
+                },
+                {
+                  type: 'folder', name: 'Electronics Engineering',
+                  children: [
+                    { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
+                    { type: 'file', name: 'Unit 2: Basics of Semiconductor Devices: P-N junction diode and BJT', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 3: AC to DC Conversion and Introduction of Operational amplifier:', meta: 'PDF', url: '#' },
+                  ]
+                },
+                {
+                  type: 'folder', name: 'CS 2',
+                  children: [
+                    { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+                  ]
+                },
+                {
+                  type: 'folder', name: 'Programming Fundamentals (C)',
+                  children: [
+                    { type: 'file', name: 'Unit 1 — Introduction to C', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 2 — Control Flow & Functions', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 3 — Arrays & Pointers', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 4 — Structures & File I/O', meta: 'PDF', url: '#' },
+                  ]
+                },
+                {
+                  type: 'folder', name: 'English Communication',
+                  children: [
+                    { type: 'file', name: 'Unit 1 — Functional Grammer', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 2 — Creative Writing Skill', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 3 — Reading Skill', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 4 — Presentation Skill', meta: 'PDF', url: '#' },
+                    { type: 'file', name: 'Unit 5 — Project Evaluation', meta: 'PDF', url: '#' },
+                  ]
+                },
+              ]
+            },
+          ]
+        },
         {
           type: 'folder', name: '1st Year',
           children: [
             {
               type: 'folder', name: 'Mathematics I',
               children: [
-                { type: 'file', name: 'Unit 1 — Matrices & Determinants', meta: 'PDF', url:"#", isNew: true },
+                { type: 'file', name: 'Unit 1 — Matrices & Determinants', meta: 'PDF', url: "#", isNew: true },
                 { type: 'file', name: 'Unit 2 — Integral Calculus', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 3 — Calculaus 2nd', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 4 — Differential Equations', meta: 'PDF', url: '#' },
@@ -63,7 +156,7 @@ const DATA = {
             {
               type: 'folder', name: 'Electronics Engineering',
               children: [
-              { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
                 { type: 'file', name: 'Unit 2: Basics of Semiconductor Devices: P-N junction diode and BJT', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 3: AC to DC Conversion and Introduction of Operational amplifier:', meta: 'PDF', url: '#' },
               ]
@@ -407,99 +500,6 @@ const DATA = {
       ]
     },
 
-    /* ── Year 1 (Common) ─────────────────── */
-    {
-      type: 'folder', name: '1st Year (Common)',
-      children: [
-        {
-          type: 'folder', name: '1st Year',
-          children: [
-            {
-              type: 'folder', name: 'Mathematics I',
-              children: [
-                { type: 'file', name: 'Unit 1 — Matrices & Determinants', meta: 'PDF', url:"#", isNew: true },
-                { type: 'file', name: 'Unit 2 — Integral Calculus', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Calculaus 2nd', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 4 — Differential Equations', meta: 'PDF', url: '#' },
-              ]
-            },
-            {
-              type: 'folder', name: 'Mathsmatics 2nd',
-              children: [
-                { type: 'file', name: 'Unit 1: Ordinary Differential Equations', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2: Series Solution & Special Functions', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3: Sequences & Series', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 4: Complex Variable – I', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 5: Complex Variable – II', meta: 'PDF', url: '#' }
-              ]
-            },
-            {
-              type: 'folder', name: 'Chemistry',
-              children: [
-                { type: 'file', name: 'Unit 1 — MOLECULAR STUCTURE AND SPECTROSCOPIC TECHNIQUES', meta: 'PDF', url: 'https://drive.google.com/file/d/1mifbCbm3ivKc1NYxbSNbsHOt9axJpv3Q/view?usp=drive_link' },
-                { type: 'file', name: 'Unit 2 — WATER TECHNOLOGY', meta: 'PDF', url: 'https://drive.google.com/file/d/1BSdW78md9gpfQ4XtZci6nVtkuEisz-K_/view?usp=drive_link' },
-                { type: 'file', name: 'Unit 3 — POLYMERS', meta: 'PDF', url: 'https://drive.google.com/file/d/1BSdW78md9gpfQ4XtZci6nVtkuEisz-K_/view?usp=drive_link' },
-                { type: 'file', name: 'Unit 4 — FUELS AND RENEWABLE ENERGY', meta: 'PDF', url: 'https://drive.google.com/file/d/1zWmhnvyv3fZV0cPVlX0ICGvsa6l7UXE-/view?usp=sharing' },
-                { type: 'file', name: 'Unit 5 — ELECTROCHEMISTRY AND APPLICATIONS', meta: 'PDF', url: 'https://drive.google.com/file/d/1MpwbIy__OWAPs31X8VS5ECrnIDz0ymRM/view?usp=sharing' },
-              ]
-            },
-            {
-              type: 'folder', name: 'Physics',
-              children: [
-                { type: 'file', name: 'Unit 1: Interfrence And Diffraction', meta: 'PDF', url: 'https://drive.google.com/file/d/1C0hFLiPsXU6f23UlZ_Ig8_tepYC9z9FG/view?usp=sharing' },
-                { type: 'file', name: 'Unit 2: Polarization', meta: 'PDF', url: 'https://drive.google.com/file/d/1w7numNH5lZif629JWlRblxyRQS9IzQO6/view?usp=sharing' },
-                { type: 'file', name: 'Unit 3: Relativity', meta: 'PDF', url: 'https://drive.google.com/file/d/1LsJlarad5iE16kJCP8atioT8Co9Uqkf6/view?usp=sharing' },
-                { type: 'file', name: 'Unit 4: Superconductivity', meta: 'PDF', url: 'https://drive.google.com/file/d/1LsJlarad5iE16kJCP8atioT8Co9Uqkf6/view?usp=sharing' },
-                { type: 'file', name: 'Unit 5: Quantum Mechanics', meta: 'PDF', url: 'https://drive.google.com/file/d/1k66bgPDtFWt8B2ugHAuHnrIki4DMumsZ/view?usp=sharing' },
-              ]
-            },
-            {
-              type: 'folder', name: 'Electrical Engineering',
-              children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
-              ]
-            },
-            {
-              type: 'folder', name: 'Electronics Engineering',
-              children: [
-                { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
-                { type: 'file', name: 'Unit 2: Basics of Semiconductor Devices: P-N junction diode and BJT', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3: AC to DC Conversion and Introduction of Operational amplifier:', meta: 'PDF', url: '#' },
-              ]
-            },
-            {
-              type: 'folder', name: 'CS 2',
-              children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
-              ]
-            },
-            {
-              type: 'folder', name: 'Programming Fundamentals (C)',
-              children: [
-                { type: 'file', name: 'Unit 1 — Introduction to C', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Control Flow & Functions', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Arrays & Pointers', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 4 — Structures & File I/O', meta: 'PDF', url: '#' },
-              ]
-            },
-            {
-              type: 'folder', name: 'English Communication',
-              children: [
-                { type: 'file', name: 'Unit 1 — Functional Grammer', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Creative Writing Skill', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Reading Skill', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 4 — Presentation Skill', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 5 — Project Evaluation', meta: 'PDF', url: '#' },
-              ]
-            },
-          ]
-        },
-      ]
-    },
 
   ]
 };
@@ -537,7 +537,7 @@ function pdfSVG() {
    */
 
 let currentPath = [];
-let searchQuery  = '';
+let searchQuery = '';
 
 /* 
    SEARCH & FLAT FILE INDEX
@@ -672,15 +672,15 @@ function animateCount(el, target, suffix = '') {
 
 function renderHeroStats() {
   const { linkedNotes, subjectCount, branchCount } = computeStats();
-  animateCount(document.getElementById('stat-notes'),    linkedNotes,   '');
-  animateCount(document.getElementById('stat-subjects'), subjectCount,  '+');
-  animateCount(document.getElementById('stat-branches'), branchCount,   '');
+  animateCount(document.getElementById('stat-notes'), linkedNotes, '');
+  animateCount(document.getElementById('stat-subjects'), subjectCount, '+');
+  animateCount(document.getElementById('stat-branches'), branchCount, '');
 }
 
 function renderBreadcrumb() {
-  const bc     = document.getElementById('breadcrumb');
-  const upBtn  = document.getElementById('up-btn');
-  const depth  = document.getElementById('breadcrumb-depth');
+  const bc = document.getElementById('breadcrumb');
+  const upBtn = document.getElementById('up-btn');
+  const depth = document.getElementById('breadcrumb-depth');
 
   const segments = [
     { label: 'notes', path: null },
@@ -699,7 +699,7 @@ function renderBreadcrumb() {
     if (isLast) {
       return `<span class="breadcrumb-segment active">${seg.label}</span>${sep}`;
     } else if (seg.path === null) {
-      return `<span class="breadcrumb-segment clickable" onclick="navigateTo([])">${ seg.label}</span>${sep}`;
+      return `<span class="breadcrumb-segment clickable" onclick="navigateTo([])">${seg.label}</span>${sep}`;
     } else {
       return `<span class="breadcrumb-segment clickable" onclick="breadcrumbNavigateTo(${JSON.stringify(seg.path)})">${seg.label}</span>${sep}`;
     }
@@ -707,7 +707,7 @@ function renderBreadcrumb() {
 
   upBtn.disabled = currentPath.length === 0;
   upBtn.style.opacity = currentPath.length === 0 ? '0.35' : '1';
-  upBtn.style.cursor  = currentPath.length === 0 ? 'not-allowed' : 'pointer';
+  upBtn.style.cursor = currentPath.length === 0 ? 'not-allowed' : 'pointer';
 
   // Depth indicator: show "Level X" when inside a folder
   if (depth) {
@@ -727,7 +727,7 @@ function renderFileList() {
 
   /* ── SEARCH MODE */
   if (searchQuery) {
-    const all     = getAllFiles();
+    const all = getAllFiles();
     const results = all.filter(({ file }) =>
       file.name.toLowerCase().includes(searchQuery) ||
       file.pathNames && file.pathNames.some(p => p.toLowerCase().includes(searchQuery))
@@ -759,9 +759,9 @@ function renderFileList() {
             <div class="search-result-path">${pathNames.join(' › ')}</div>
           </div>
           ${hasUrl
-            ? `<a class="file-dl-btn" href="${file.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Open in new tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>`
-            : `<span class="file-arrow file-arrow-download">&darr;</span>`
-          }
+          ? `<a class="file-dl-btn" href="${file.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Open in new tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>`
+          : `<span class="file-arrow file-arrow-download">&darr;</span>`
+        }
         </div>`;
     }).join('');
     return;
@@ -783,7 +783,7 @@ function renderFileList() {
   list.innerHTML = node.children.map((child, idx) => {
     if (child.type === 'folder') {
       const empty = !child.children || child.children.length === 0;
-      const childFileCount   = (child.children || []).filter(c => c.type === 'file').length;
+      const childFileCount = (child.children || []).filter(c => c.type === 'file').length;
       const childFolderCount = (child.children || []).filter(c => c.type === 'folder').length;
       const countLabel = childFileCount > 0
         ? `${childFileCount} file${childFileCount !== 1 ? 's' : ''}`
@@ -818,9 +818,9 @@ function renderFileList() {
             ${child.meta ? `<div class="file-meta">${escapeHtml(child.meta)}</div>` : ''}
           </div>
           ${hasUrl
-            ? `<a class="file-dl-btn" href="${child.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Open in new tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>`
-            : `<span class="file-arrow file-arrow-download">&darr;</span>`
-          }
+          ? `<a class="file-dl-btn" href="${child.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Open in new tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>`
+          : `<span class="file-arrow file-arrow-download">&darr;</span>`
+        }
         </div>`;
     }
   }).join('');
@@ -965,8 +965,8 @@ function showFileChosen(name) {
 
 function updateFilename() {
   const title = (document.getElementById('note-title').value || '').trim();
-  const type  = document.querySelector('input[name="note-type"]:checked')?.value || 'handwritten';
-  const year  = (document.getElementById('note-year')?.value || '').trim();
+  const type = document.querySelector('input[name="note-type"]:checked')?.value || 'handwritten';
+  const year = (document.getElementById('note-year')?.value || '').trim();
 
   const yearRow = document.getElementById('upl-year-row');
   if (yearRow) yearRow.style.display = (type === 'pyq') ? 'flex' : 'none';
@@ -1022,13 +1022,13 @@ function clearUploadForm() {
 
 function openPdfModal(url, name) {
   const overlay = document.getElementById('pdf-modal-overlay');
-  const iframe  = document.getElementById('pdf-iframe');
-  const title   = document.getElementById('pdf-modal-title');
-  const dlBtn   = document.getElementById('pdf-download-btn');
+  const iframe = document.getElementById('pdf-iframe');
+  const title = document.getElementById('pdf-modal-title');
+  const dlBtn = document.getElementById('pdf-download-btn');
 
-  title.textContent   = name;
-  iframe.src          = url;
-  dlBtn.href          = url;
+  title.textContent = name;
+  iframe.src = url;
+  dlBtn.href = url;
   dlBtn.setAttribute('download', name + '.pdf');
 
   overlay.classList.add('active');
@@ -1037,7 +1037,7 @@ function openPdfModal(url, name) {
 
 function closePdfModal() {
   const overlay = document.getElementById('pdf-modal-overlay');
-  const iframe  = document.getElementById('pdf-iframe');
+  const iframe = document.getElementById('pdf-iframe');
   overlay.classList.remove('active');
   // Clear src so the PDF stops loading / frees memory
   setTimeout(() => { iframe.src = ''; }, 300);
@@ -1046,12 +1046,12 @@ function closePdfModal() {
 
 function submitUpload() {
   const title = document.getElementById('note-title').value.trim();
-  const file  = document.getElementById('note-file').files[0];
+  const file = document.getElementById('note-file').files[0];
   if (!file) { showToast('Please select a PDF file first.'); return; }
   if (!title) { showToast('Please enter a note title.'); return; }
 
   const btn = document.getElementById('upl-submit-btn');
-  btn.disabled    = true;
+  btn.disabled = true;
   btn.textContent = 'Preparing...';
 
   setTimeout(() => {
@@ -1083,7 +1083,7 @@ function submitUpload() {
 function triggerSuccessGmail() {
   const btn = document.getElementById('upl-gmail-btn');
   const subject = (btn && btn.dataset.gmailSubject) || encodeURIComponent('Notes Contribution');
-  const body    = (btn && btn.dataset.gmailBody)    || encodeURIComponent('Attaching the PDF.');
+  const body = (btn && btn.dataset.gmailBody) || encodeURIComponent('Attaching the PDF.');
   openGmailCompose('notesarchive1@gmail.com', subject, body);
 }
 
