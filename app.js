@@ -35,19 +35,21 @@ const DATA = {
             {
               type: 'folder', name: 'Chemistry',
               children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1 — MOLECULAR STUCTURE AND SPECTROSCOPIC TECHNIQUES', meta: 'PDF', url: 'https://drive.google.com/file/d/1mifbCbm3ivKc1NYxbSNbsHOt9axJpv3Q/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 2 — WATER TECHNOLOGY', meta: 'PDF', url: 'https://drive.google.com/file/d/1BSdW78md9gpfQ4XtZci6nVtkuEisz-K_/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 3 — POLYMERS', meta: 'PDF', url: 'https://drive.google.com/file/d/1BSdW78md9gpfQ4XtZci6nVtkuEisz-K_/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 4 — FUELS AND RENEWABLE ENERGY', meta: 'PDF', url: 'https://drive.google.com/file/d/1zWmhnvyv3fZV0cPVlX0ICGvsa6l7UXE-/view?usp=sharing' },
+                { type: 'file', name: 'Unit 5 — ELECTROCHEMISTRY AND APPLICATIONS', meta: 'PDF', url: 'https://drive.google.com/file/d/1MpwbIy__OWAPs31X8VS5ECrnIDz0ymRM/view?usp=sharing' },
               ]
             },
             {
               type: 'folder', name: 'Physics',
               children: [
-                { type: 'file', name: 'Unit 1: Molecular Structure & Spectroscopic Techniques', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2: Water Technology', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3: Polymers', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 4: Fuels & Renewable Energy', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 5: Electrochemistry & Applications', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1: Interfrence And Diffraction', meta: 'PDF', url: 'https://drive.google.com/file/d/1C0hFLiPsXU6f23UlZ_Ig8_tepYC9z9FG/view?usp=sharing' },
+                { type: 'file', name: 'Unit 2: Polarization', meta: 'PDF', url: 'https://drive.google.com/file/d/1w7numNH5lZif629JWlRblxyRQS9IzQO6/view?usp=sharing' },
+                { type: 'file', name: 'Unit 3: Relativity', meta: 'PDF', url: 'https://drive.google.com/file/d/1LsJlarad5iE16kJCP8atioT8Co9Uqkf6/view?usp=sharing' },
+                { type: 'file', name: 'Unit 4: Superconductivity', meta: 'PDF', url: 'https://drive.google.com/file/d/1LsJlarad5iE16kJCP8atioT8Co9Uqkf6/view?usp=sharing' },
+                { type: 'file', name: 'Unit 5: Quantum Mechanics', meta: 'PDF', url: 'https://drive.google.com/file/d/1k66bgPDtFWt8B2ugHAuHnrIki4DMumsZ/view?usp=sharing' },
               ]
             },
             {
@@ -413,9 +415,6 @@ const DATA = {
           type: 'folder', name: '1st Year',
           children: [
             {
-          type: 'folder', name: '1st Year',
-          children: [
-            {
               type: 'folder', name: 'Mathematics I',
               children: [
                 { type: 'file', name: 'Unit 1 — Matrices & Determinants', meta: 'PDF', url:"#", isNew: true },
@@ -434,23 +433,24 @@ const DATA = {
                 { type: 'file', name: 'Unit 5: Complex Variable – II', meta: 'PDF', url: '#' }
               ]
             },
-
             {
               type: 'folder', name: 'Chemistry',
               children: [
-                { type: 'file', name: 'Unit 1 — Mechanics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2 — Waves & Optics', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3 — Electromagnetism', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1 — MOLECULAR STUCTURE AND SPECTROSCOPIC TECHNIQUES', meta: 'PDF', url: 'https://drive.google.com/file/d/1mifbCbm3ivKc1NYxbSNbsHOt9axJpv3Q/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 2 — WATER TECHNOLOGY', meta: 'PDF', url: 'https://drive.google.com/file/d/1BSdW78md9gpfQ4XtZci6nVtkuEisz-K_/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 3 — POLYMERS', meta: 'PDF', url: 'https://drive.google.com/file/d/1BSdW78md9gpfQ4XtZci6nVtkuEisz-K_/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 4 — FUELS AND RENEWABLE ENERGY', meta: 'PDF', url: 'https://drive.google.com/file/d/1zWmhnvyv3fZV0cPVlX0ICGvsa6l7UXE-/view?usp=sharing' },
+                { type: 'file', name: 'Unit 5 — ELECTROCHEMISTRY AND APPLICATIONS', meta: 'PDF', url: 'https://drive.google.com/file/d/1MpwbIy__OWAPs31X8VS5ECrnIDz0ymRM/view?usp=sharing' },
               ]
             },
             {
               type: 'folder', name: 'Physics',
               children: [
-                { type: 'file', name: 'Unit 1: Molecular Structure & Spectroscopic Techniques', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 2: Water Technology', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 3: Polymers', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 4: Fuels & Renewable Energy', meta: 'PDF', url: '#' },
-                { type: 'file', name: 'Unit 5: Electrochemistry & Applications', meta: 'PDF', url: '#' },
+                { type: 'file', name: 'Unit 1: Interfrence And Diffraction', meta: 'PDF', url: 'https://drive.google.com/file/d/1C0hFLiPsXU6f23UlZ_Ig8_tepYC9z9FG/view?usp=sharing' },
+                { type: 'file', name: 'Unit 2: Polarization', meta: 'PDF', url: 'https://drive.google.com/file/d/1w7numNH5lZif629JWlRblxyRQS9IzQO6/view?usp=sharing' },
+                { type: 'file', name: 'Unit 3: Relativity', meta: 'PDF', url: 'https://drive.google.com/file/d/1LsJlarad5iE16kJCP8atioT8Co9Uqkf6/view?usp=sharing' },
+                { type: 'file', name: 'Unit 4: Superconductivity', meta: 'PDF', url: 'https://drive.google.com/file/d/1LsJlarad5iE16kJCP8atioT8Co9Uqkf6/view?usp=sharing' },
+                { type: 'file', name: 'Unit 5: Quantum Mechanics', meta: 'PDF', url: 'https://drive.google.com/file/d/1k66bgPDtFWt8B2ugHAuHnrIki4DMumsZ/view?usp=sharing' },
               ]
             },
             {
@@ -464,7 +464,7 @@ const DATA = {
             {
               type: 'folder', name: 'Electronics Engineering',
               children: [
-              { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
+                { type: 'file', name: 'Unit 1: Number Systems & Boolean Algebra:', meta: 'PDF', url: 'https://drive.google.com/file/d/1WHCokUQeLmhrkZMuvkW2R_ZPcsnGeP0x/view?usp=drive_link' },
                 { type: 'file', name: 'Unit 2: Basics of Semiconductor Devices: P-N junction diode and BJT', meta: 'PDF', url: '#' },
                 { type: 'file', name: 'Unit 3: AC to DC Conversion and Introduction of Operational amplifier:', meta: 'PDF', url: '#' },
               ]
@@ -496,8 +496,6 @@ const DATA = {
                 { type: 'file', name: 'Unit 5 — Project Evaluation', meta: 'PDF', url: '#' },
               ]
             },
-          ]
-        },
           ]
         },
       ]
