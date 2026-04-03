@@ -504,6 +504,164 @@ const DATA = {
   ]
 };
 
+/* ──────────────────────────────────────────────────────────────
+   PYQ DATA  —  Branch → Semester → Subject → Year files
+   Structure mirrors DATA exactly so all navigation/search works.
+   ────────────────────────────────────────────────────────────── */
+const PYQ_DATA = {
+  type: 'folder',
+  name: 'pyqs',
+  children: [
+
+    /* ── CSE PYQs ─────────────────────────────────────────────── */
+    {
+      type: 'folder', name: 'CSE',
+      children: [
+        {
+          type: 'folder', name: '1st Semester',
+          children: [
+            {
+              type: 'folder', name: 'Mathematics I',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+                { type: 'file', name: 'PYQ 2022', meta: 'PYQ', url: '#', year: '2022' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Physics',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+                { type: 'file', name: 'PYQ 2022', meta: 'PYQ', url: '#', year: '2022' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Chemistry',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+                { type: 'file', name: 'PYQ 2022', meta: 'PYQ', url: '#', year: '2022' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Programming Fundamentals (C)',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+                { type: 'file', name: 'PYQ 2022', meta: 'PYQ', url: '#', year: '2022' },
+              ]
+            },
+            {
+              type: 'folder', name: 'English Communication',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Electronics Engineering',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+              ]
+            },
+          ]
+        },
+        {
+          type: 'folder', name: '2nd Semester',
+          children: [
+            {
+              type: 'folder', name: 'Mathematics II',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Data Structures',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Object Oriented Programming (Java)',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+              ]
+            },
+            {
+              type: 'folder', name: 'Digital Electronics',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+              ]
+            },
+          ]
+        },
+        {
+          type: 'folder', name: '3rd Semester',
+          children: [
+            { type: 'folder', name: 'Computer Networks', children: [
+              { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+              { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+            ]},
+            { type: 'folder', name: 'Operating Systems', children: [
+              { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+              { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+            ]},
+            { type: 'folder', name: 'Database Management Systems', children: [
+              { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+              { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+            ]},
+          ]
+        },
+        { type: 'folder', name: '4th Semester', children: [] },
+        { type: 'folder', name: '5th Semester', children: [] },
+        { type: 'folder', name: '6th Semester', children: [] },
+        { type: 'folder', name: '7th Semester', children: [] },
+        { type: 'folder', name: '8th Semester', children: [] },
+      ]
+    },
+
+    /* ── CE PYQs ───────────────────────────────────────────────── */
+    {
+      type: 'folder', name: 'CE',
+      children: [
+        { type: 'folder', name: '1st Semester', children: [] },
+        { type: 'folder', name: '2nd Semester', children: [] },
+        { type: 'folder', name: '3rd Semester', children: [] },
+        { type: 'folder', name: '4th Semester', children: [] },
+      ]
+    },
+
+    /* ── ECE PYQs ──────────────────────────────────────────────── */
+    {
+      type: 'folder', name: 'ECE',
+      children: [
+        { type: 'folder', name: '1st Semester', children: [] },
+        { type: 'folder', name: '2nd Semester', children: [] },
+        { type: 'folder', name: '3rd Semester', children: [] },
+        { type: 'folder', name: '4th Semester', children: [] },
+      ]
+    },
+
+    /* ── ME PYQs ───────────────────────────────────────────────── */
+    {
+      type: 'folder', name: 'ME',
+      children: [
+        { type: 'folder', name: '1st Semester', children: [] },
+        { type: 'folder', name: '2nd Semester', children: [] },
+        { type: 'folder', name: '3rd Semester', children: [] },
+        { type: 'folder', name: '4th Semester', children: [] },
+      ]
+    },
+
+  ]
+};
+
 /* 
    SVG ICONS
    */
@@ -532,19 +690,69 @@ function pdfSVG() {
   </svg>`;
 }
 
+// PYQ file icon — teal/blue tint to distinguish from notes
+function pyqSVG(year) {
+  return `<svg viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="32" height="36" rx="3" fill="#2563eb"/>
+    <path d="M20 0L32 12V36H20V0Z" fill="#1d4ed8"/>
+    <polygon points="20,0 32,12 20,12" fill="rgba(255,255,255,0.35)"/>
+    <text x="4" y="16" font-family="Manrope,sans-serif" font-size="5.5" font-weight="800" fill="white">PYQ</text>
+    <text x="4" y="28" font-family="Manrope,sans-serif" font-size="6.5" font-weight="800" fill="rgba(255,255,255,0.9)">${year || ''}</text>
+  </svg>`;
+}
+
 /* 
    STATE
    */
 
 let currentPath = [];
 let searchQuery = '';
+// 'notes' | 'pyqs'
+let activeTab = 'notes';
+
+/** Returns the active dataset based on current tab */
+function getActiveData() {
+  return activeTab === 'pyqs' ? PYQ_DATA : DATA;
+}
+
+/**
+ * Switch between Notes and PYQs tabs.
+ * Resets path and search, then re-renders everything.
+ */
+function switchTab(tab) {
+  if (activeTab === tab) return;
+  activeTab = tab;
+  currentPath = [];
+  searchQuery = '';
+
+  // Update search input
+  const si = document.getElementById('search-input');
+  if (si) si.value = '';
+  const sc = document.getElementById('search-clear');
+  if (sc) sc.style.display = 'none';
+
+  // Update pill UI
+  document.querySelectorAll('.explorer-tab').forEach(btn => btn.classList.remove('active'));
+  const activeBtn = document.getElementById('tab-' + tab);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  // Update panel copy
+  const title = document.querySelector('.panel-title');
+  const copy  = document.querySelector('.panel-copy');
+  if (title) title.textContent = tab === 'pyqs' ? 'Browse PYQs' : 'Browse Notes';
+  if (copy)  copy.textContent  = tab === 'pyqs'
+    ? 'Browse previous year question papers by branch and semester.'
+    : 'Open folders to drill into branch, semester, and subject. PDFs open in the built-in viewer.';
+
+  render();
+}
 
 /* 
    SEARCH & FLAT FILE INDEX
    */
 
 // Recursively collect all files with path metadata
-function getAllFiles(node = DATA, pathNames = [], parentPathIdx = [], results = []) {
+function getAllFiles(node = getActiveData(), pathNames = [], parentPathIdx = [], results = []) {
   if (!node || !node.children) return results;
   node.children.forEach((child, i) => {
     if (child.type === 'file') {
@@ -583,7 +791,7 @@ function clearSearch() {
    */
 
 function getNodeAtPath(path) {
-  let node = DATA;
+  let node = getActiveData();
   for (const idx of path) {
     if (!node.children) return null;
     node = node.children[idx];
@@ -635,7 +843,8 @@ function render() {
 
 /* ── Hero Stats ─ */
 function computeStats() {
-  const allFiles = getAllFiles();
+  // Stats always show Notes totals in the hero (PYQ data is separate)
+  const allFiles = getAllFiles(DATA);
   const linkedNotes = allFiles.filter(r => r.file.url && r.file.url !== '#').length;
 
   // Count unique subject-level folders (depth 3 in tree: branch > sem > subject)
@@ -682,12 +891,13 @@ function renderBreadcrumb() {
   const upBtn = document.getElementById('up-btn');
   const depth = document.getElementById('breadcrumb-depth');
 
+  const rootLabel = activeTab === 'pyqs' ? 'pyqs' : 'notes';
   const segments = [
-    { label: 'notes', path: null },
-    { label: 'btech', path: [] },
+    { label: rootLabel, path: null },
+    { label: getActiveData().name, path: [] },
   ];
 
-  let node = DATA;
+  let node = getActiveData();
   for (let i = 0; i < currentPath.length; i++) {
     node = node.children[currentPath[i]];
     segments.push({ label: node.name.toLowerCase(), path: currentPath.slice(0, i + 1) });
@@ -750,7 +960,7 @@ function renderFileList() {
              onclick="${hasUrl ? `openPdfModal(${JSON.stringify(file.url)}, ${JSON.stringify(file.name)})` : `navigateTo(${JSON.stringify(parentPath)})`}"
              role="button" tabindex="0"
              onkeydown="if(event.key==='Enter'||event.key===' ') this.click()">
-          <div class="icon-pdf">${pdfSVG()}</div>
+          <div class="icon-pdf">${getFileIcon(file)}</div>
           <div class="file-info">
             <div class="file-name">
               ${escapeHtml(file.name)}
@@ -771,11 +981,12 @@ function renderFileList() {
   const node = getNodeAtPath(currentPath);
 
   if (!node || !node.children || node.children.length === 0) {
+    const isPyq = activeTab === 'pyqs';
     list.innerHTML = `
       <div class="empty-state">
-        <div class="empty-icon"></div>
-        <p style="font-weight:700;">No notes here yet.</p>
-        <p style="margin-top:0.5rem;font-size:0.82rem;">Be the first to contribute!</p>
+        <div class="empty-icon">${isPyq ? '📋' : '📂'}</div>
+        <p style="font-weight:700;">${isPyq ? 'No PYQs here yet.' : 'No notes here yet.'}</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;">${isPyq ? 'PYQs will be added soon. Contribute to help!' : 'Be the first to contribute!'}</p>
       </div>`;
     return;
   }
@@ -809,11 +1020,12 @@ function renderFileList() {
         <div class="file-item" id="item-${idx}"
              onclick="navigateToIndex(${idx})" role="button" tabindex="0"
              onkeydown="if(event.key==='Enter'||event.key===' ') navigateToIndex(${idx})">
-          <div class="icon-pdf">${pdfSVG()}</div>
+          <div class="icon-pdf">${getFileIcon(child)}</div>
           <div class="file-info">
             <div class="file-name">
               ${escapeHtml(child.name)}
               ${child.isNew ? '<span class="new-badge">NEW</span>' : ''}
+              ${activeTab === 'pyqs' && child.year ? `<span class="pyq-year-badge">${escapeHtml(child.year)}</span>` : ''}
             </div>
             ${child.meta ? `<div class="file-meta">${escapeHtml(child.meta)}</div>` : ''}
           </div>
@@ -826,6 +1038,12 @@ function renderFileList() {
   }).join('');
 }
 
+/** Get the correct file icon: PYQ or PDF */
+function getFileIcon(child) {
+  if (activeTab === 'pyqs') return pyqSVG(child.year || '');
+  return pdfSVG();
+}
+
 function renderUploadSection() {
   const section = document.getElementById('upload-section');
   const pathLabel = document.getElementById('upload-path-label');
@@ -835,8 +1053,8 @@ function renderUploadSection() {
   // Show "Upload Notes" when inside a subject folder (its contents are files)
   const hasFiles = node && node.children && node.children.some(c => c.type === 'file');
 
-  if (hasFiles && currentPath.length > 0) {
-    let n = DATA;
+  if (hasFiles && currentPath.length > 0 && activeTab === 'notes') {
+    let n = getActiveData();
     const parts = [];
     for (const idx of currentPath) {
       n = n.children[idx];

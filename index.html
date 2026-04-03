@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notes Archive - B.Tech Study Notes</title>
-  <meta name="description" content="Access study notes for B.Tech students. Organized by branch, semester, and subject for easy navigation." />
+  <title>Students Archived - B.Tech Study Library</title>
+  <meta name="description" content="Access study notes and PYQs for B.Tech students. Organized by branch, semester, and subject for easy navigation." />
   <link rel="icon" href="logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,13 +20,14 @@
         <img src="logo.svg" alt="" class="site-logo-svg" />
       </span>
       <span class="site-logo-text">
-        <strong>Notes Archive</strong>
+        <strong>Students Archived</strong>
         <small>B.Tech study library</small>
       </span>
     </a>
     <nav class="site-nav">
       <a href="#archive-panel" class="nav-link nav-link-primary" onclick="document.getElementById('archive-panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;">Browse</a>
       <a href="#" class="nav-link" id="nav-contribute" onclick="openContribute(); return false;">Contribute</a>
+      <a href="#archive-panel" class="nav-link" id="nav-pyqs" onclick="switchTab('pyqs'); document.getElementById('archive-panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;">PYQs</a>
       <a href="#" class="nav-link" id="nav-about" onclick="openAbout(); return false;">About</a>
 
     </nav>
@@ -38,7 +39,7 @@
       <section class="hero-panel">
         <div class="hero-copy">
           <p class="hero-kicker">Student maintained &bull; branch to subject</p>
-          <h1 class="hero-title">Study notes, arranged the way you actually search.</h1>
+          <h1 class="hero-title">Study notes and PYQs, arranged the way you actually search.</h1>
           <p class="hero-text">A cleaner archive for B.Tech notes, PYQs, and uploads. Browse by branch, semester, and subject without the clutter.</p>
           <div class="hero-actions">
             <a href="#archive-panel" class="hero-btn hero-btn-primary" onclick="document.getElementById('archive-panel').scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;">Open archive</a>
@@ -94,7 +95,16 @@
             </div>
           </div>
 
+          <!-- NOTES / PYQs TAB BAR -->
+          <div class="explorer-tab-bar" role="tablist" aria-label="Content type">
+            <button id="tab-notes" class="explorer-tab active" role="tab" aria-selected="true"
+              onclick="switchTab('notes')"> Notes</button>
+            <button id="tab-pyqs" class="explorer-tab" role="tab" aria-selected="false"
+              onclick="switchTab('pyqs')"> PYQs</button>
+          </div>
+
           <!-- BREADCRUMB -->
+
           <div class="breadcrumb-bar">
             <button class="up-btn" id="up-btn" onclick="navigateUp()" title="Go up (Backspace)" aria-label="Go up">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
