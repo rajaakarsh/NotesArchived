@@ -32,10 +32,12 @@ The project eliminates the clutter of traditional file-sharing methods by provid
 ## ✨ Features
 
 - **📂 Hierarchical Navigation**: Intuitive folder-tree structure mimicking a native OS file explorer.
+- **📑 Tabbed Interface**: Seamlessly toggle between academic Notes and Previous Year Questions (PYQs) for better organization.
 - **🔍 Global Search**: Real-time recursive search across all branches, semesters, and units.
+- **📝 PYQ Repository**: Dedicated data structure and UI styling for accessing past examination papers.
 - **🚀 Latest Uploads**: Dedicated section highlighting recently added materials (like Mathematics I) with "New" status badges.
 - **📱 Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
-- **🎨 Dynamic UI**: Custom-built SVG icons for folders and file types (PDFs) with theme-aware coloring.
+- **🎨 Dynamic UI**: Custom-built SVG icons for folders and file types with theme-aware coloring and tabbed navigation styling.
 - **⚡ Zero Framework Overhead**: Built with Vanilla JavaScript for near-instant load times and maximum compatibility.
 - **📍 Breadcrumb Support**: Easy "up-one-level" navigation and path tracking.
 - **📧 Smart Mail Integration**: Robust Gmail compose flow featuring mobile deep-link fallback and optimized desktop tab handling for seamless feedback.
@@ -122,10 +124,11 @@ Locate the appropriate `children` array and add a file object:
 ## 🖥 Usage
 
 1. **Browsing**: Click on folders (e.g., `CSE` -> `1st Year` -> `Chemistry` or `Physics`) to navigate through the academic hierarchy and view specific unit topics like *Water Technology* or *Relativity*.
-2. **Searching**: Use the search bar at the top to find specific units or subjects instantly across the expanded curriculum.
-3. **Downloading**: Click on any file entry (such as the newly added **Chemistry** or **Physics** notes) to open the document in a new tab via integrated Google Drive links.
-4. **Breadcrumbs**: Use the "Back" button or the path indicators to navigate up the directory tree and switch between different years, semesters, or engineering disciplines.
-5. **Feedback & Contact**: Use the integrated contact flow to send queries; the system intelligently handles transitions to the Gmail app on mobile devices or opens a dedicated compose tab on desktops.
+2. **Tab Navigation**: Use the dedicated tabs to switch between the **Notes** library and the **PYQ** (Previous Year Questions) section.
+3. **Searching**: Use the search bar at the top to find specific units or subjects instantly across the expanded curriculum.
+4. **Downloading**: Click on any file entry (such as the newly added **Chemistry** or **Physics** notes) to open the document in a new tab via integrated Google Drive links.
+5. **Breadcrumbs**: Use the "Back" button or the path indicators to navigate up the directory tree and switch between different years, semesters, or engineering disciplines.
+6. **Feedback & Contact**: Use the integrated contact flow to send queries; the system intelligently handles transitions to the Gmail app on mobile devices or opens a dedicated compose tab on desktops.
 
 ---
 ## 🤝 Contributing
