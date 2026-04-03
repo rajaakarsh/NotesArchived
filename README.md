@@ -33,7 +33,7 @@ The project eliminates the clutter of traditional file-sharing methods by provid
 
 - **📂 Hierarchical Navigation**: Intuitive folder-tree structure mimicking a native OS file explorer.
 - **🔍 Global Search**: Real-time recursive search across all branches, semesters, and units.
-- **🚀 Latest Uploads**: Dedicated section highlighting recently added materials with "New" status badges.
+- **🚀 Latest Uploads**: Dedicated section highlighting recently added materials (like Mathematics I) with "New" status badges.
 - **📱 Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
 - **🎨 Dynamic UI**: Custom-built SVG icons for folders and file types (PDFs) with theme-aware coloring.
 - **⚡ Zero Framework Overhead**: Built with Vanilla JavaScript for near-instant load times and maximum compatibility.
@@ -121,9 +121,9 @@ Locate the appropriate `children` array and add a file object:
 
 ## 🖥 Usage
 
-1. **Browsing**: Click on folders (e.g., `CSE` -> `1st Year` -> `Mathematics I` or `2nd Year` -> `Data Structures`) to navigate through the academic hierarchy and view specific unit topics like *Matrices & Determinants* or *Arrays & Linked Lists*.
+1. **Browsing**: Click on folders (e.g., `CSE` -> `1st Year` -> `Chemistry` or `Physics`) to navigate through the academic hierarchy and view specific unit topics like *Water Technology* or *Relativity*.
 2. **Searching**: Use the search bar at the top to find specific units or subjects instantly across the expanded curriculum.
-3. **Downloading**: Click on any file entry (such as the linked **Unit 1: Number Systems & Boolean Algebra** notes) to open the document in a new tab via integrated cloud storage links.
+3. **Downloading**: Click on any file entry (such as the newly added **Chemistry** or **Physics** notes) to open the document in a new tab via integrated Google Drive links.
 4. **Breadcrumbs**: Use the "Back" button or the path indicators to navigate up the directory tree and switch between different years, semesters, or engineering disciplines.
 5. **Feedback & Contact**: Use the integrated contact flow to send queries; the system intelligently handles transitions to the Gmail app on mobile devices or opens a dedicated compose tab on desktops.
 
