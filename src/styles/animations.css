@@ -1,0 +1,43 @@
+/* ============================================================
+   animations.css — keyframes + scroll-reveal utilities
+   Subtle by design; fully disabled under prefers-reduced-motion
+   (handled globally in base.css).
+   ============================================================ */
+
+@keyframes shimmer { to { background-position: -135% 0; } }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-18px) translateX(8px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero + panels animate in on load. */
+.hero, .panel, .section { animation: fadeUp var(--t-slow) var(--ease) both; }
+
+/* Staggered entrance for list items. */
+.card-list .card,
+.card-grid .card { animation: cardIn 0.34s var(--ease) both; }
+.card-list .card:nth-child(1) { animation-delay: 0ms; }
+.card-list .card:nth-child(2) { animation-delay: 45ms; }
+.card-list .card:nth-child(3) { animation-delay: 90ms; }
+.card-list .card:nth-child(4) { animation-delay: 135ms; }
+.card-list .card:nth-child(5) { animation-delay: 180ms; }
+.card-list .card:nth-child(6) { animation-delay: 225ms; }
+.card-list .card:nth-child(7) { animation-delay: 270ms; }
+.card-list .card:nth-child(n+8) { animation-delay: 300ms; }
+
+/* Scroll reveal (toggled by IntersectionObserver in ui.js). */
+[data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+[data-reveal].is-revealed { opacity: 1; transform: translateY(0); }
+[data-reveal="delay-1"] { transition-delay: 0.08s; }
+[data-reveal="delay-2"] { transition-delay: 0.16s; }
