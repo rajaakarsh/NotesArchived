@@ -101,6 +101,13 @@ export const PYQ_DATA = {
         {
           type: 'folder', name: '3rd Semester',
           children: [
+            {
+              type: 'folder', name: 'Digital Electronics',
+              children: [
+                { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
+                { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },
+              ]
+            },
             { type: 'folder', name: 'Computer Networks', children: [
               { type: 'file', name: 'PYQ 2024', meta: 'PYQ', url: '#', year: '2024' },
               { type: 'file', name: 'PYQ 2023', meta: 'PYQ', url: '#', year: '2023' },

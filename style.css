@@ -2029,3 +2029,360 @@ svg {
     font-size: 0.84rem;
   }
 }
+
+/* ━━ DIGITAL ELECTRONICS SUBJECT PAGE & CHAPTER CARDS ━━━━━━━ */
+.subject-view-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  animation: fileSlideIn 0.3s ease forwards;
+}
+
+.subject-header {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 1.4rem;
+  padding: 1.6rem 1.8rem;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.subject-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, #7ae0d4 50%, var(--accent-dim) 100%);
+}
+
+.subject-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.subject-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(199, 218, 210, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.subject-badge-accent {
+  background: var(--accent-soft);
+  border-color: rgba(73, 197, 182, 0.3);
+  color: var(--accent);
+}
+
+.subject-badge-mono {
+  font-family: "IBM Plex Mono", monospace;
+  background: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.3);
+  color: #93c5fd;
+}
+
+.subject-title {
+  font-family: "Sora", sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.subject-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.subject-description {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+.subject-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.subject-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.75rem;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.subject-stat-pill strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.subject-stat-pill-highlight {
+  background: var(--accent-soft);
+  border-color: rgba(73, 197, 182, 0.25);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* ━━ CHAPTER CARDS GRID ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.1rem;
+  width: 100%;
+}
+
+.chapter-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.35rem;
+  border-radius: 1.25rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.chapter-card:hover {
+  border-color: var(--border-strong);
+  border-left-color: var(--accent);
+  transform: translateY(-3px);
+  background: var(--surface-hover);
+  box-shadow: 0 14px 36px rgba(73, 197, 182, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.chapter-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.chapter-num {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.chapter-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.chapter-type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(199, 218, 210, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.chapter-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(73, 197, 182, 0.1);
+  border: 1px solid rgba(73, 197, 182, 0.25);
+  color: #7ae0d4;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7ae0d4;
+}
+
+.chapter-card-title {
+  font-family: "Sora", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 0.55rem;
+}
+
+.chapter-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.chapter-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(199, 218, 210, 0.08);
+}
+
+.chapter-pages-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.6rem;
+  background: rgba(73, 197, 182, 0.08);
+  border: 1px solid rgba(73, 197, 182, 0.2);
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.chapter-pdf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 0.6rem;
+  background: rgba(239, 141, 129, 0.12);
+  border: 1px solid rgba(239, 141, 129, 0.25);
+  font-size: 0.72rem;
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+.chapter-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.chapter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  padding: 0.65rem 1rem;
+  border-radius: 0.85rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.chapter-btn-primary {
+  flex: 1;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%);
+  color: #071310;
+  border: none;
+  box-shadow: 0 4px 14px rgba(73, 197, 182, 0.25);
+}
+
+.chapter-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(73, 197, 182, 0.35);
+  background: linear-gradient(135deg, #5dd4c5 0%, var(--accent) 100%);
+}
+
+.chapter-btn-primary:active {
+  transform: translateY(0);
+}
+
+.chapter-btn-secondary {
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.chapter-btn-secondary:hover {
+  background: var(--surface-strong);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.chapter-btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ━━ RESPONSIVE: CHAPTER GRID ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 900px) {
+  .chapter-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .subject-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .chapter-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  .subject-header {
+    padding: 1.25rem 1.15rem;
+  }
+  .subject-title {
+    font-size: 1.4rem;
+  }
+  .subject-description {
+    font-size: 0.86rem;
+  }
+  .chapter-card {
+    padding: 1.15rem 1.1rem;
+  }
+}
